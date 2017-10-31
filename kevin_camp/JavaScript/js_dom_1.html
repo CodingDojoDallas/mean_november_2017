@@ -1,12 +1,36 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>JS DOM 1</title>
-	</head>
-	<body>
-		<script type="text/javascript">
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul>
+		Part 1 -->
+<script>
+    function appendList(array, id){
+        for(i = 0; i < array.length; i++){
+					let student = document.createElement("li");
+					student.innerHTML = array[i];
+					document.getElementById("main").appendChild(student)
+				}
+    };
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, target_id);
+</script>
 
-		</script>
-	</body>
+		Bonus:
+<script type="text/javascript">
+		 function superAppend(array, element, id){
+			 for(i = 0; i < array.length; i++){
+				 let student = document.createElement(element);
+				 student.innerHTML = array[i];
+				 document.getElementById("main").appendChild(student)
+			 }
+		 }
+		 let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+		 let target_id = "main";
+		 let element = "h1"
+		 superAppend(students, element, target_id);
+</script>
+</body>
 </html>
