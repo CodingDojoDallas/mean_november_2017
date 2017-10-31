@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Ninjas</title>
+	<script type="text/javascript">
+		var Ninja = function(name){
+			this.name = name;
+			this.health = 100;
+			var speed = 3;
+			var strength = 3;
+			
+			this.getSpeed = function(){
+				return speed;
+			}
+			this.getStrength = function(){
+				return strength;
+			}
+		
+		}
+		Ninja.prototype = {
+			sayName: function(){
+				console.log(this.name);
+			},
+			showStats: function(){
+				this.sayName();
+				console.log("Health: "+ this.health +"\nSpeed: "+ this.getSpeed() + "\nStrength: "+ this.getStrength());
+			},
+			drinkSake:function(){
+				this.health += 10;
+			}
+		}
+		let hinata = new Ninja("Hinata")
+		hinata.showStats();
+	
+	
+	</script>
+</head>
+<body>
+	open the console
+</body>
+</html>
