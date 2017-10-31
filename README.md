@@ -1,4 +1,4 @@
-# Coding Dojo - Ruby on Rails October 2017
+# Coding Dojo - MEAN November 2017
 
 Welcome Scripters 
 
