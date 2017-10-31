@@ -23,5 +23,5 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 NOTE: If you don't get in at least one pull request daily, then *_ya ain't serious_*.
 
 ## Videos
-Fundamentals - https://www.youtube.com/watch?v=OG2a8vQ0KLg
+Fundamentals - https://www.youtube.com/watch?v=OG2a8vQ0KLg <br>
 OOP I - https://youtu.be/67Arg-xpGIU
