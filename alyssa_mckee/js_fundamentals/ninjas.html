@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Ninjas</title>
 	<script type="text/javascript">
-		var Ninja = function(name){
+		function Ninja(name){
 			this.name = name;
 			this.health = 100;
 			var speed = 3;
@@ -18,22 +18,45 @@
 			}
 		
 		}
-		Ninja.prototype = {
-			sayName: function(){
-				console.log(this.name);
-			},
-			showStats: function(){
-				this.sayName();
-				console.log("Health: "+ this.health +"\nSpeed: "+ this.getSpeed() + "\nStrength: "+ this.getStrength());
-			},
-			drinkSake:function(){
-				this.health += 10;
-			}
+		Ninja.prototype.sayName= function(){
+			console.log(this.name);
 		}
-		let hinata = new Ninja("Hinata")
+		Ninja.prototype.showStats= function(){
+			this.sayName();
+			console.log("Health: "+ this.health +"\nSpeed: "+ this.getSpeed() + "\nStrength: "+ this.getStrength());
+		}
+		Ninja.prototype.drinkSake=function(){
+			this.health += 10;
+		}
+		Ninja.prototype.punch= function(target){
+			if (target instanceof Ninja){
+				target.health -= 5;
+				console.log(target.name + " was punched by "+ this.name+ " and lost 5 health!")
+			}
+			else
+				console.log(this.name + " punched a " + target.constructor.name)	//note only works in ES6
+		}
+		Ninja.prototype.kick= function(target){
+			if (target instanceof Ninja){
+				target.health -= 15;
+				console.log(target.name + " was kicked by "+ this.name+ " and lost 15 health!")
+			}
+			else
+				console.log(this.name + " kicked a " + target.constructor.name)	//note only works in ES6
+		}
+		
+		var Rock = function(){
+			this.size= 3;
+		}
+		let rock = new Rock();
+
+		let hinata = new Ninja("Hinata");
 		hinata.showStats();
-	
-	
+		let neji = new Ninja("Neji");
+		neji.showStats();
+		hinata.punch(neji);
+		hinata.kick(neji);
+		neji.showStats();
 	</script>
 </head>
 <body>
