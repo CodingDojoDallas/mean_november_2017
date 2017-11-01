@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>get yo name</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").on("click",function(){
+				var username = $("input").val()
+				$("h1").text("???")
+				$.get("https://api.github.com/users/" + username, function(data){
+					
+					$("h1").text(data.name)
+					
+				}); //get
+			
+			}); //button on click
+		 $("form").submit(function(e){ e.preventDefault(); });
+			
+			
+		}); //document ready
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" name="username" id="username" value="Silverinfinity"/>
+	</form>
+	<button>WHATS MY NAME</button>
+	<h1>???</h1>
+	
+	
+</body>
+</html>
