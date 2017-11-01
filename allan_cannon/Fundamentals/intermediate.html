@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+  function starString(num){
+    if(num === 1)
+      return "*"
+    return "*" + starString(num-1)
+  }
+
+  function draw_stars(arr){
+    for(var i = 0; i<arr.length; i++)
+      console.log(starString(arr[i]))
+  }
+
+  function draw_stars2(arr){
+    for(var i = 0; i<arr.length; i++){
+      if(typeof arr[i] === "number")
+        console.log(starString(arr[i]))
+      else{
+        var temp = ""
+        for(var j=0; j<arr[i].length;j++)
+          temp += arr[i].charAt(0).toLowerCase()
+        console.log(temp)
+      }
+    }
+  }
+
+
+  console.log(starString(8))
+  draw_stars([1,2,3,4,5,4,3,2,1])
+  draw_stars2([1,"Allan",2,"Frank",5,4,"Bobby Joe Ray"])
+
+</script>
