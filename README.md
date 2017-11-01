@@ -24,5 +24,7 @@ NOTE: If you don't get in at least one pull request daily, then *_ya ain't serio
 
 ## Videos
 Fundamentals - https://www.youtube.com/watch?v=OG2a8vQ0KLg <br>
-OOP I - https://youtu.be/67Arg-xpGIU
-OOP II - https://www.youtube.com/watch?v=1ZnkXQuh_x0
+OOP I - https://youtu.be/67Arg-xpGIU <br>
+OOP II - https://www.youtube.com/watch?v=1ZnkXQuh_x0 <br>
+Callback Lecture - https://youtu.be/CDc28fBoV1Y <br>
+Callback Demo - https://youtu.be/7sEulaR-rak <br>
