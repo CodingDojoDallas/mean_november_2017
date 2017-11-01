@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+var Bunny = function(name){
+	var speed = 3
+	var strength = 3
+	this.name = name
+	this.health = 100
+	let self = this
+	
+  this.showStats = function(){
+	  return "Name: " + self.name + ", Health: " + self.health + ", Speed: " + speed
+	}
+
+  this.kick = function(other) {
+  	  if (other.constructor == Bunny){
+  	  		other.health -= 5*strength
+  	  		return other.showStats()
+  	  }
+  }
+}
+
+
+Bunny.prototype.sayName = function(){
+	return "My name is " + this.name + "."
+}
+
+Bunny.prototype.eatCarrots = function(){
+  this.health += 10 
+  return this.showStats()
+}
+
+Bunny.prototype.frolic = function(other){
+  this.health += 5
+  other.health += 5
+  return other.showStats()
+}
+
+
+var peter = new Bunny("Peter")
+console.log(peter.sayName())
+console.log(peter.showStats())
+console.log(peter.eatCarrots())
+
+var flopsy = new Bunny('Flopsy')
+console.log(flopsy.sayName())
+console.log(flopsy.showStats())
+console.log(flopsy.eatCarrots())
+
+console.log(flopsy.frolic(peter))
+
+console.log(peter.kick(flopsy))
+
+
+</script>	
+</body>
+</html>

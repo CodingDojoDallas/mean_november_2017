@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Objects</title>
+</head>
+<body>
+<script> 
+// Challenge 1 - Print Student List
+
+let students = [
+    {name: 'Remy', cohort: 'Jan'},
+    {name: 'Genevieve', cohort: 'March'},
+    {name: 'Chuck', cohort: 'Jan'},
+    {name: 'Osmund', cohort: 'June'},
+    {name: 'Nikki', cohort: 'June'},
+    {name: 'Boris', cohort: 'June'}
+];
+
+function printStudents(arr){
+	for (var i = 0; i < arr.length; i ++){
+  	console.log("Name: " + arr[i].name + ", " + "Cohort: " + arr[i].cohort)
+	}	
+}
+
+console.log(printStudents(students))
+
+// Challenge 2 - Print Employee List
+
+let users = {
+    employees: [
+        {'first_name':  'Miguel', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],
+    managers: [
+       {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+       {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+    ]
+ };
+ 
+ 
+ // Challenge 2
+
+function printUsers(obj){
+	for (let type in obj){
+		console.log(type.toUpperCase());
+		let count = 1
+		for (var i = 0; i < obj[type].length; i++, count ++){
+		  var char = obj[type][i].first_name.length + obj[type][i].last_name.length
+		  console.log(count + " - " + obj[type][i].last_name + ", " + obj[type][i].first_name + " - " + char)
+		}
+	}
+}
+
+
+console.log(printUsers(users))
+ 
+
+
+
+</script>
+</body>
+</html>
