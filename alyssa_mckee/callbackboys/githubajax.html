@@ -9,15 +9,16 @@
 			$("button").on("click",function(){
 				var username = $("input").val()
 				$("h1").text("???")
-				$.get("https://api.github.com/users/" + username, function(data){
-					
-					$("h1").text(data.name)
-					
-				}); //get
+				$.get("https://api.github.com/users/" + username, displayname)
 			
 			}); //button on click
-		 $("form").submit(function(e){ e.preventDefault(); });
+			$("form").submit(function(e){ e.preventDefault(); });
 			
+			function displayname (data){
+				
+				$("h1").text(data.name)
+				
+			}; //get
 			
 		}); //document ready
 	</script>
