@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // ----- PART 1 -----
+    function starString(numba) {
+      string = ""
+      for (var i = 0; i < numba; i++) {
+        string += "*";
+      }
+      return string;
+    }
+    var eight = starString(8)
+    console.log(eight);
+    var five = starString(5)
+    console.log(five);
+
+    // ----- PART 2 -----
+    function starString(numba) {
+      string = ""
+      for (var i = 0; i < numba; i++) {
+        string += "*";
+      }
+      return string;
+    }
+
+    function drawStars(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        console.log(starString(arr[i]))
+      }
+    }
+    let x = [4, 6, 1, 3, 5, 7, 25]
+    drawStars(x)
+    // ----- PART 3 -----
+    function starString(numba) {
+      var string = ""
+      for (var i = 0; i < numba; i++) {
+        string += "*";
+      }
+      return string;
+    }
+
+    function drawStars(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'number') {
+          console.log(starString(arr[i]));
+        } else {
+          var string = arr[i];
+          var fletter = string[0];
+          var newStr = "";
+          for (var a = 0; a < string.length; a++) {
+            newStr += fletter
+          }
+          console.log(newStr.toLowerCase())
+        }
+      }
+    }
+    let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+    drawStars(x)
+  </script>
+</body>
+
+</html>

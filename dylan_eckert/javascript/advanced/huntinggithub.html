@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>hunting github</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <button id="button">Find my name!</button>
+  <script type="text/javascript">
+    var button = document.getElementById('button');
+    var getData = function(){
+      $.get("https://api.github.com/users/dylan-eckert", displayName);
+    }
+    button.addEventListener("click", getData);
+
+    function displayName(data) {
+      let name = document.createElement("p");
+      name.innerHTML = data['name'];
+      document.body.appendChild(name);
+    }
+  </script>
+</body>
+</html>
