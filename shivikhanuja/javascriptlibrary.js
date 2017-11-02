@@ -44,6 +44,14 @@ var _ = {
         }  
 
         return newArr;
+    },
+    reduce: function(arr, callback){
+        var sum = 0;
+
+        for (var i =0; i < arr.length ; i++) {
+            sum = callback(sum , arr[i]);
+        } 
+        return sum;
     }
 }
 
@@ -65,3 +73,6 @@ console.log(result);
 
 var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 console.log(result);
+
+var reduce = _.reduce([1,2,3,4,5,6], function(x,y) { return x + y});
+console.log(reduce);
