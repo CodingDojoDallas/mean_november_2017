@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>Ninja Class 1</title>
+     </head>
+     <body>
+          <script>
+               function Ninja(name, health) {
+                    var self = this;
+                    // public attributes
+                    self.name = name;
+                    self.health = 100;
+                    // private attributes
+                    var speed = 3;
+                    var strength = 3;
+                    // public methods
+                    Ninja.prototype.sayName = function () {
+                         console.log(`My ninja name is ${this.name}`);
+                    };
+                    Ninja.prototype.showStats = function () {
+                         console.log(`Strength: ${strength}, Speed: ${speed}, Health ${this.health}`);
+                    };
+                    Ninja.prototype.drinkSake = function () {
+                         this.health += 10;
+                         return this;
+                    };
+               }
+               
+          </script>
+     </body>
+</html>
