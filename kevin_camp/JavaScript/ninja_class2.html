@@ -8,13 +8,16 @@
 
 <body>
 	<script type="text/javascript">
+
+		//Need to add Validations
+
 		function NinjaConstructor(name, health, speed, strength){
 			var Ninja = {};
 			//attributes
 			Ninja.name = name;
 			Ninja.health = 100;
 			Ninja.speed = 3;
-			Ninja.health = 3;
+			Ninja.strength = 3;
 			//methods
 			Ninja.sayName = function() {
 				console.log("My Ninja name is " + this.name + "!");
@@ -26,13 +29,26 @@
 				this.health = this.health + 10;
 				console.log(this.name + " drinks a healthy shake and gains 3 health. Health = " + this.health + ".");
 			}
+			Ninja.punch = function(Ninja2){
+				var Ninja2 = NinjaConstructor('Chun Li');
+				Ninja2.health = Ninja2.health - 5;
+				console.log(this.name+" punches "+Ninja2.name+"; health is now "+Ninja2.health);
+			}
+			Ninja.kick = function(Ninja2){
+				var Ninja2 = NinjaConstructor('Chun Li');
+				Ninja2.health = Ninja2.health - (this.strength*15);
+				console.log(this.name+" kicks "+Ninja2.name+"; health is now "+Ninja2.health);
+			}
 			return Ninja;
 		};
 		//Test ES5 Ninja Class
-		var Ninja1 = NinjaConstructor("Hyabusa");
+		var Ninja1 = NinjaConstructor("Ryu Hyabusa");
+		var Ninja2 = NinjaConstructor("Chun Li")
 		Ninja1.sayName();
 		Ninja1.showStats();
 		Ninja1.drinkHealthShake();
+		Ninja1.punch(Ninja2);
+		Ninja1.kick(Ninja2);
 	</script>
 </body>
 
