@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		td {
+			border: 1px solid silver;
+			text-align: center;
+			width: 40px;
+			height: 40px;
+		}
+		td:first-child, tr:first-child {
+			background-color: silver;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="target"></div>
+</body>
+<script type="text/javascript">
+	function drawTable() {
+		let htmlString = "<table>";
+		for (let i = 0; i < 13; i++) {
+			htmlString += "<tr>";
+			for (let j = 0; j < 13; j++) {
+				let nums = i * j;
+				let data;
+				if (i === 0) { nums = j };
+				if (j === 0) { nums = i };
+				if (nums === 0) {
+					data = "<td>" + "x" + "</td>";
+				} else {
+				 	data = "<td>" + nums + "</td>";
+				}
+				htmlString += data;
+			}
+			htmlString += "</tr>";
+		}
+		htmlString += "</table>";
+		document.getElementById("target").innerHTML = htmlString;
+	}
+	drawTable();
+</script>
+</html>

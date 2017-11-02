@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function zero_negativity(arr){
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] >= 0) {
+              continue;
+          }else {
+            return false
+              break;
+          }
+        }
+        return true
+      }
+      arr1 = [1, 2, 3, 4, 5]
+      arr2 = [1, 2, -2, 3, 4, 5]
+      console.log(zero_negativity(arr1))
+      console.log(zero_negativity(arr2))
+
+      function is_even(numba){
+        if (numba % 2 == 0) {
+          return "EVEN";
+        } else{
+          return "ODD";
+        }
+      }
+      num1 = 127
+      num2 = 256 
+      console.log(is_even(num1));
+      console.log(is_even(num2));
+
+      function how_many_even(arr){
+        numeven = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (is_even(arr[i]) === "EVEN") {
+                numeven += 1;
+            }else if (is_even(arr[i]) === "ODD") {
+                continue;
+            }
+        }
+        return numeven
+      }
+      console.log(how_many_even([1,2,3,4,6]));
+
+      function create_dummy_array(n){
+        arr1 = [];
+        for (var i = 0; i < n; i++) {
+          arr1.push(Math.floor(Math.random()*10));
+        }
+        return arr1
+      }
+      n1 = console.log(create_dummy_array(8));
+      n2 = console.log(create_dummy_array(5));
+
+      function random_choice(arr){
+        var i = Math.floor(Math.random()*(arr.length));
+        return arr[i];
+      }
+      arr1 = console.log(random_choice([1,2,3,4,5]));
+    </script>
+  </body>
+</html>
