@@ -1,0 +1,25 @@
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Github Hunting</title>
+</head>
+
+<body>
+    <button id='hunt'>Hunt</button>
+    <script>
+        $(document).ready(function () {
+            $('#hunt').click(function () {
+                $.get("https://api.github.com/users/harshildp", display);
+            });
+            function display(data) {
+                if (data.name) {
+                    $('body').append(`<h1>${data.name}</h1>`);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
