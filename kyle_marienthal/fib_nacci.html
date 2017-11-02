@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function fib() {
+      // Some variables here
+      var temp = 0;
+      var x = 0;
+      var y = 1;
+        function nacci() {
+          // y is going to be x + y
+          // x is going to be what y was
+          // temp is going to be y
+          temp = y;
+          y = x + y;
+          x = temp;
+          console.log(y);
+        }
+        return nacci
+      }
+      var fibCounter = fib();
+      fibCounter() // should console.log "1"
+      fibCounter() // should console.log "1"
+      fibCounter() // should console.log "2"
+      fibCounter() // should console.log "3"
+      fibCounter() // should console.log "5"
+      fibCounter() // should console.log "8"
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+      fibCounter()
+    </script>
+    <!-- Assignment: Fib + Nacci
+The Fibonacci sequence is a sequence where each number is the sum of its two predecessors. The sequence starts off like so: (0), 1, 1, 2, 3, 5, 8, etc. The 0 is in parenthesis because it helps the sequence get started but it is not actually part of the sequence.
+
+Using Closures make the Fib function with the following specifications: -->
+
+
+<!-- // Here we have a function called "Outer"
+function Outer() {
+      // There is a count variable that is scoped to the function
+  var count = 0;
+      // There is an inner function that increments count and then console.logs it
+  function inner() {
+        // increment count
+    count++
+        // console.log count
+    console.log(count);
+  }
+      // return the inner function! We can return a function!
+  return inner
+}
+// counter is now the function returned from invoking Outer
+var counter = Outer();
+              // if we invoke the counter function
+counter()     // this will console.log "1"
+counter()     // this will console.log "2"
+counter()     // this will console.log "3"
+counter()     // this will console.log "4"
+              // So that means that the count variable still exists!
+              // and it is being changed even though we aren't inside of the Outer function!
+                   // What if we try to access count out here?
+console.log(count) // doesn't work! -->
+  </body>
+</html>
