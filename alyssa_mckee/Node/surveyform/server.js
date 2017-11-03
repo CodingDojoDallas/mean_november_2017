@@ -1,28 +1,32 @@
-// require express, config app
+
 var express = require("express")
-var app = require("./config.js")(express);
+// path module -- try to figure out where and why we use this
+var app = express();
 
-// root route to render the index.ejs view
-app.get('/', function(req, res) {
-	
-	
-	res.render("index");
-})
+var path = require("path");
 
-app.get('/result', function(req, res) {
-	
-	
-	res.render("result", req.session.data);
-})
+var session = require('express-session');
+// create the express app
 
-// post route for adding a user
-app.post('/process', function(req, res) {
-	console.log("POST DATA", req.body);
-	req.session.data = req.body;
-	res.redirect('/result');
-})
+app.use(session({secret: 'codingdojorocks'}));
 
-// tell the express app to listen on port 8000
+var bodyParser = require('body-parser');
+
+// use it!
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+// static content
+app.use(express.static(path.join(__dirname, "./static")));
+
+// setting up ejs and our views folder
+app.set('views', path.join(__dirname, './views'));
+app.set('view engine', 'ejs');
+
+//add the routes to the app
+require("./routes")(app);
+
 app.listen(8000, function() {
- console.log("listening on port 8000");
+console.log("listening on port 8000");
 });
