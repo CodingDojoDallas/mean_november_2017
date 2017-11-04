@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title></title>
+     </head>
+     <body>
+          <script>
+
+var _ = {
+   map: function(array, callback) {
+        var newArray = [];
+        for (var i = 0; i < array.length; i++){
+            newArray.push(callback(array[i]));
+        }
+        return newArray;
+   },
+//      map_.map(list, iteratee, [context]) Alias: collect
+// Produces a new array of values by mapping each value in list through a transformation function (iteratee). The iteratee is passed three arguments: the value, then the index (or key) of the iteration, and finally a reference to the entire list.
+//
+// _.map([1, 2, 3], function(num){ return num * 3; });
+// => [3, 6, 9]
+// _.map({one: 1, two: 2, three: 3}, function(num, key){ return num * 3; });
+// => [3, 6, 9]
+// _.map([[1, 2], [3, 4]], _.first);
+// => [1, 3]
+   reduce: function(array, callback) {
+             var newArray = [];
+             var value = 0;
+             for (var i = 0; i < array.length; i++){
+                  value += callback(array[i]);
+             }
+             newArray.push(value);
+             return newArray;
+        },
+
+//      reduce_.reduce(list, iteratee, [memo], [context]) Aliases: inject, foldl
+// Also known as inject and foldl, reduce boils down a list of values into a single value. Memo is the initial state of the reduction, and each successive step of it should be returned by iteratee. The iteratee is passed four arguments: the memo, then the value and index (or key) of the iteration, and finally a reference to the entire list.
+//
+// If no memo is passed to the initial invocation of reduce, the iteratee is not invoked on the first element of the list. The first element is instead passed as the memo in the invocation of the iteratee on the next element in the list.
+//
+// var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
+// => 6
+
+   find: function(array, callback) {
+        for (var i = 0; i < array.length; i++){
+             if (callback(array[i])){
+             return array[i];
+           }
+        }
+   },
+//      find_.find(list, predicate, [context]) Alias: detect
+// Looks through each value in the list, returning the first one that passes a truth test (predicate), or undefined if no value passes the test. The function returns as soon as it finds an acceptable element, and doesn't traverse the entire list.
+//
+// var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// => 2
+   filter: function(array, callback) {
+          var newArray = [];
+          for (var i = 0; i < array.length; i++){
+               if (callback(array[i])){
+              newArray.push(array[i]);
+            }
+          }
+          return newArray;
+     },
+//      filter_.filter(list, predicate, [context]) Alias: select
+// Looks through each value in the list, returning an array of all the values that pass a truth test (predicate).
+
+// var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// => [2, 4, 6]
+   reject: function(array, callback) {
+          var newArray = [];
+          for (var i = 0; i < array.length; i++){
+               if (!callback(array[i])){
+              newArray.push(array[i]);
+            }
+          }
+          return newArray;
+     }
+}
+
+//      reject_.reject(list, predicate, [context])
+// Returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter.
+//
+// var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// => [1, 3, 5]
+const array = [3,6, 4, 15, 81];
+// var newArray = _.map(array, function callback(value) { return value * 5; });
+// console.log(newArray);
+// var newArray = _.reduce(array, function callback(array) { return array; });
+// console.log(newArray);
+// console.log(_.find(array, function callback(x) { return x % 2 == 0; }));
+// // note: we used named functions for clarity above, but we can also pass anonymous functions as the second parameter:
+// console.log(_.filter(array, function(x) { return x > 20; }));
+console.log(_.reject(array, function(x) { return x > 20; }));
+
+ </script>
+ </body>
+ </html>
