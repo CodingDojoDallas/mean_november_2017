@@ -29,6 +29,16 @@ app.get("/users", function (request, response){
     ];
     response.render('users', {users: users_array});
 })
+app.get('/', function (req, res){
+    res.render('index', {title: "my Express project"});
+  });
+  // route to process new user form data:
+  app.post('/users', function (req, res){
+    //code to add user to db goes here!
+    res.redirect('/');
+})
+
+
 app.listen (8000, function(){
     console.log("listening on 8000")
 })
