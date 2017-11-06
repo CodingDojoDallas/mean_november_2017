@@ -1,0 +1,44 @@
+.container{
+	font-family: sans-serif;
+	width: 90%;
+	height: 750px;
+	background-color: RGB(50, 80, 100);
+	border: 1pt solid black;
+	border-radius: 10px;
+	color: RGB(255, 200, 0);
+	text-shadow: black 0.1em 0.1em 0.2em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.main{
+	width: 75%;
+	height: 75%;
+	background-color: RGB(10, 10, 50);
+	border: 2pt solid darkgrey;
+	border-radius: 10px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table{
+	font-weight: bold;
+	text-align: left;
+	border-collapse: collapse;
+	margin: 3.5em;
+}
+
+td{
+	padding: 1.2em;
+}
+
+
+button{
+	border: 1pt solid white;
+	border-radius: 10px;
+	font-weight: bold;
+	margin: 20px;
+	display: inline-block;
+}
