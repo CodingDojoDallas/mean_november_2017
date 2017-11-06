@@ -31,3 +31,4 @@ Callback Demo - https://youtu.be/7sEulaR-rak <br>
 Node Server - https://youtu.be/zTQwP_WK_H4 <br>
 Express - https://youtu.be/JCN9Pxf4A8Q <br>
 Mongo - https://youtu.be/qpJ5OtGyCg8 <br>
+Mongoose - https://youtu.be/96R3ukffoaY <br>
