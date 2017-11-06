@@ -29,3 +29,5 @@ OOP II - https://www.youtube.com/watch?v=1ZnkXQuh_x0 <br>
 Callback Lecture - https://youtu.be/CDc28fBoV1Y <br>
 Callback Demo - https://youtu.be/7sEulaR-rak <br>
 Node Server - https://youtu.be/zTQwP_WK_H4 <br>
+Express - https://youtu.be/JCN9Pxf4A8Q <br>
+Mongo - https://youtu.be/qpJ5OtGyCg8 <br>
