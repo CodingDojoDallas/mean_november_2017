@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Packs</title>
+</head>
+<body>
+	<form action="/packs" method="POST">
+		<label for="animal">Animal type:</label>
+		<input type="text" name="animal" id="animal"/>
+		<br/>
+		<label for="pack_name">Pack Name:</label>
+		<input type="text" name="pack_name" id="pack_name"/>
+		<br/>
+		<label for="pack_size">Pack Size </label>
+		<input type="text" name="pack_size" id="pack_size"/>
+		<br/>
+		<button type="submit">submit</button>
+	</form>
+	<% if(typeof(errors) != "undefined" ) { %>
+		<% for (var x in errors) {%>
+			<p><%= errors[x].message %></p>
+		<% } %>
+	<% } %>
+	<button onclick="location='/'">back to dashboard</button>
+</body>
+</html>
