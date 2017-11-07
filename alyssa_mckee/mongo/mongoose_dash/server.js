@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "./static")));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
-require('./controller')(app);
+require('./routes')(app);
 
 // tell the express app to listen on port 8000
 app.listen(port, function() {
