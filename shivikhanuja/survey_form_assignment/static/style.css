@@ -1,0 +1,12 @@
+#container {
+    background-color: gray;
+    width: 700px;
+    height: 250px;
+    margin-left: 400px;
+    margin-top: 250px;
+}
+
+#form {
+    display: inline;
+    vertical-align: center;
+}
