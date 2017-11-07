@@ -1,15 +1,12 @@
 var express = require ("express");
-
+var  port = 6789;
 var app = express();
+// require body-parser
+var bodyParser = require('body-parser');
+var session = require('express-session');
 
-app.get('/', function(request,response){
-    response.send("<h1>Hello There</h1>");
-})
-
-app.get('/main', function(request,response){
-    response.render('main');
-})
-
+// use it!
+app.use(bodyParser.urlencoded({extended: true}));
 // this is the line that tells our server to use the "/static" folder for static content
 app.use(express.static(__dirname + "/static"));
 // two underscores before dirname
@@ -18,27 +15,29 @@ app.use(express.static(__dirname + "/static"));
 app.set('views', __dirname + '/views'); 
 // Now lets set the view engine itself so that express knows that we are using ejs as opposed to another templating engine like jade
 app.set('view engine', 'ejs');
+app.use(session({
+    secret :'secretpassword',
+    name: 'hello-express',
+    proxy :true,
+    resave: true,
+    saveUninitialized:true
+}));
+app.get('/', function(request,response){
+    request.session.name = request.session.name || "";
+    request.session.scount = request.session.count || 0;
 
-app.get("/users", function (request, response){
-    // hard-coded user data
-    var users_array = [
+    let users = [
         {name: "Michael", email: "michael@codingdojo.com"}, 
-        {name: "Jay", email: "jay@codingdojo.com"}, 
-        {name: "Brendan", email: "brendan@codingdojo.com"}, 
-        {name: "Andrew", email: "andrew@codingdojo.com"}
+        {name: "Jay", email: "jay@codingdojo.com"} 
     ];
-    response.render('users', {users: users_array});
-})
-app.get('/', function (req, res){
-    res.render('index', {title: "my Express project"});
-  });
-  // route to process new user form data:
-  app.post('/users', function (req, res){
-    //code to add user to db goes here!
-    res.redirect('/');
-})
+    response.render('index' , {users:users, count: request.session.count });
+});
 
+app.post('/increment', (request,response) => {
+    request.session.count += 2;
 
-app.listen (8000, function(){
-    console.log("listening on 8000")
+    response.redirect('/');
+})
+app.listen (6789, function(){
+    console.log("listening on 6789")
 })

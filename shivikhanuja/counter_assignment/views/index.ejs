@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Counter</title>
+</head>
+<body>
+    <div>
+        <h2>Energy level up <%=  count  %></h2>
+    </div>
+    <form action="/add" method = "post">
+    <div>
+        <input type="submit" value =" Add"/>
+    </div>
+    </form>
+    <form action="/reset" method = "post">
+        <div>
+            <input type="submit" value ="Reset"/>
+        </div>
+    </form>
+</body>
+</html>
