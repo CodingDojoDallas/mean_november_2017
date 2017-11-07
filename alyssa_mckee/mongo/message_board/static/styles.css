@@ -1,0 +1,15 @@
+*{
+	font-family:sans-serif;
+}
+
+.message{
+	font-size: 24;
+}
+
+.comments{
+	margin-left: 50px;
+	font-size:16;
+}
+.error{
+	color: red;
+}

@@ -14,3 +14,6 @@ module.exports = (function(){
 
 	return mongoose.model('Pack');
 })()
+
+//useful
+//MySchema.methods.greet = function() { return 'Hello, ' + this.name; }; 

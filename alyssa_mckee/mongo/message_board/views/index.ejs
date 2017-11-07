@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Message Board</title>
+	<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+	<h1>The Message Board</h1>
+	<hr/>
+	<form action="/posts" method="POST">
+		<label for="author">Name:</label>
+		<br/>
+		<input type="text" name="author" id="author"/>
+		<br/>
+		<label for="text">Message:</label>
+		<br/>
+		<textarea name="text" id="text" cols="50" rows="5"></textarea>
+		<br/>
+		<button type="submit">Post Message</button>
+		<% if (errors) { %>
+			<% if (errors.message) { %>
+				<% for (error in errors.message) {%>
+					<p class="error"><%= errors.message[error].message %></p>
+				<% } %>
+			<% } %>
+		<% } %>
+	</form>
+	<% for (var x = 0; x < posts.length; x++) { %>
+		<div class="message">
+			<h2>Name: <%= posts[x].author %></h2>
+			<h2>Message: <%= posts[x].text %></h2>
+		</div>
+		<div class="comments">
+			<% for (var c = 0; c < posts[x].comments.length; c++) { %>
+				<div>
+					<br/>
+					<p>Name: <%= posts[x].comments[c].author %></p>
+					<p>Comment: <%= posts[x].comments[c].text %> </p>
+				</div>
+			<% } %>
+			
+			<form action="/posts/<%= posts[x]._id %>/comments" method="POST">
+				<label for="author">Name:</label>
+				<br/>
+				<input type="text" name="author" id="author"/>
+				<br/>
+				<label for="text">Comment:</label>
+				<br/>
+				<textarea name="text" id="text" cols="50" rows="2"></textarea>
+				<br/>
+				<button type="submit">Post Comment</button>
+				<% if (errors) { %>
+					<% if (errors[posts[x]._id.toString()]) {%>
+						<% for (error in errors[posts[x]._id.toString()]) {%>
+							<p class="error"><%= errors[posts[x]._id.toString()][error].message %></p>
+						<% } %>
+					<% } %>
+				<% } %>
+			</form>
+			
+		</div>
+	<% } %>
+	
+</body>
+</html>
