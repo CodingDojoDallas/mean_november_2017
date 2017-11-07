@@ -10,8 +10,8 @@ let app = express();
 // ********4th*********
 // set up the middleware______________________________
 ////views
-app.set('view engine', 'ejs');
-app.set('views', __dirname + "/views")
+app.set('view engine', 'ejs');//sets the view engine to ejs
+app.set('views', __dirname + "/views")//sets the views directory (a path pointing to this folder)
 // ********5th*********
 ////static content
 app.use(express.static(__dirname + '/static'));
@@ -28,6 +28,7 @@ app.use(session({
 
 // ********8th*********
 ////set up the routes________________________________
+
 app.get('/', (req, res) => {
   req.session.user = 'Cody'
   res.send('Setting the User to Cody');
