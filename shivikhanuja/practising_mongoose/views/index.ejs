@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="container">
+    <form action="/result" method="post">
+        <label>Name</label>
+        <input type="text" name="name"/>
+        <label>Email</label>
+        <input type="text" name="email"/>
+        <input type="submit" value="Submit"/>
+    </form>
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <% for (var x in errors) { %>
+         <h3><%= errors[x].message %></h3>
+        <% } %>
+    <% } %>
+   
+</body>
+</html>
