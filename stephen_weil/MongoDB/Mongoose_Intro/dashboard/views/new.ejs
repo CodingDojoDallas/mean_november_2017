@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a New Fox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Add a New Fox</h3>
+        <form action="/add_fox" method="post">
+            <div class="form-group">
+                <label for="genus">Genus</label>
+                <input type="text" class="form-control" id="genus" name="genus">
+            </div>
+            <div class="form-group">
+                <label for="species">Species</label>
+                <input type="text" class="form-control" id="species" name="species">
+            </div>
+            <div class="form-group">
+                <label for="habitats">Habitats (separate with commas, optional): </label>
+                <input type="text" class="form-control" id="habitats" name="habitats">
+            </div>
+            <div class="form-group">
+                <label for="description">Description (optional): </label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

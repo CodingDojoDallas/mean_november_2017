@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="message_board.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Post a message:</h1>
+        <form action="/add_post" method="post" id="poster">
+            <p>Name: </p>
+            <p><input type="text" name="author"></p>
+            <p>Message: </p>
+            <textarea name="content"></textarea>
+            <input type="submit" value="Post">
+        </form>
+        <div id="posts">
+            <% for (var i=0, posts_len=posts.length; i<posts_len; i++) { %>
+            <div class="post">
+                <h2>Name: <%= posts[i].author %></h2>
+                <p class="message"><%= posts[i].content %></p>
+                <div class="comment">
+                    <% for (var k=0, comments_len=posts[i].comments.length; k<comments_len; k++) { %>
+                    <h2>Name: <%= posts[i].comments[k].author %></h2>
+                    <p class="message">Comment: <%= posts[i].comments[k].content %></p>
+                    <% } %>
+                    <h2>Post a comment:</h2>
+                    <form action="/add_comment/<%= posts[i]._id %>" method="post">
+                        <p>Name: </p>
+                        <p><input type="text" name="author"></p>
+                        <p>Comment: </p>
+                        <textarea name="content"></textarea>
+                        <input type="submit" name="submit" value="Post a comment">
+                    </form>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

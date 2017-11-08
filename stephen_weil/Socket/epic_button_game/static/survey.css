@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+}
+button#epic{
+    background-color: blue;
+    color: white;
+    width: 40%;
+    font-size: 36px;
+    padding: 1.5em;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: block;
+    margin: 1.5em auto;
+}
+button#reset{
+    width: 20%;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    padding: 1em;
+}
