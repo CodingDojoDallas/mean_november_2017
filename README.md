@@ -32,3 +32,4 @@ Node Server - https://youtu.be/zTQwP_WK_H4 <br>
 Express - https://youtu.be/JCN9Pxf4A8Q <br>
 Mongo - https://youtu.be/qpJ5OtGyCg8 <br>
 Mongoose - https://youtu.be/96R3ukffoaY <br>
+Figuring It Out - https://youtu.be/rTwlnh3YmQc <br>
