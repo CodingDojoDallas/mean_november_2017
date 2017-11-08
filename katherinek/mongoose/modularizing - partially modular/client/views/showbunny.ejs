@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Bunny</title>
+</head>
+<body>
+
+<p> Bunnies and Posts | <a href="/">All Bunnies</a> | <a href="/bunny/new">Add Bunny</a> | <a href="/posts">All Posts</a> | <a href="/addpost">Add Post</a> </p>
+	
+<h2>A Bunny</h2>
+
+<p><%= bunny.name %></p>
+<p><%= bunny.age %></p>
+<p><%= bunny.breed %></p>
+<p><%= bunny.color %></p>
+
+<p><a href="/bunny/edit/<%= bunny.id %>">Edit Bunny</a></p>
+
+<form action="/bunny/destroy/<%= bunny.id %>" method="post">
+<input type="submit" value="Delete">
+</form>	
+
+
+
+
+</body>
+</html>
