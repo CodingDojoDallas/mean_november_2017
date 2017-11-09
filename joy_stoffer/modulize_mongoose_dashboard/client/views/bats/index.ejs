@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>The Bats... All the Bats</title>
+     </head>
+     <body>
+       <h1>The Bats... All the Bats</h1>
+       <a href="/bats/new"><button type="button" name="button">Add a Bat</button></a>
+
+    <% for (var i = 0; i < bats.length; i++) { %>
+      <p>Bat's Name: <a href="/bats/<%= bats[i]._id %>"><%= bats[i].name %></a></p>
+      <p>Bat's Weight: <%= bats[i].weight %> lbs</p>
+      <p>Bat's Color: <%= bats[i].color %></p>
+      <p> <a href="/bats/edit/<%= bats[i]._id %>"><button type="button" name="button">Edit</button></a>
+           <form action="/bats/destroy/<%= bats[i]._id %>" method="post">
+                <input type="submit" value="Delete">
+           </form>
+      <hr>
+    <% } %>
+    <!-- <a href="/"><button type="button" name="button">back</button></a> -->
+     </body>
+</html>
