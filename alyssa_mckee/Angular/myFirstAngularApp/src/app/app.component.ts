@@ -6,12 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-// interface mailInterface{
-	// email: string,
-	// importance: boolean,
-	// subject: string,
-	// content: string
-// }
 
 export class AppComponent {
   title = 'app';
