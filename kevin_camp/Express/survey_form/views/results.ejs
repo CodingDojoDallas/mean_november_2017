@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="results.css">
+		<meta charset="utf-8">
+		<title>Survey Form Results</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Submitted Infromation</h1>
+			<div class="main">
+				<table>
+					<tr>
+						<td><label>Name:</label></td>
+						<td><%= user.name %></td>
+					</tr>
+
+					<tr>
+						<td><label>Dojo Location:</label></td>
+						<td><%= user.location %></td>
+					</tr>
+					<tr>
+						<td><label>Favorite Language:</label></td>
+						<td><%= user.language %></td>
+					</tr>
+					<tr>
+						<td><label>Comment:</label></td>
+						<td><%= user.comment %></td>
+					</tr>
+				</table>
+				<form action="/reset" method="post">
+					<button type="submit">Reset Survey Form</button>
+				</form>
+			</div>
+
+		</div>
+
+	</body>
+</html>

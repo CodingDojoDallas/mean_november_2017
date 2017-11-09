@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="index.css">
+		<meta charset="utf-8">
+		<title>Index Page</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Index Page</h1>
+			<div class="main">
+				<h2>You have been here <%= counter %> time(s).</h2>
+				<form action="/add_two" method="post">
+					<button type="submit">Add 2 Visits</button>
+				</form>
+				<form action="/reset" method="post">
+					<button type="submit">Reset Counter</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
