@@ -1,0 +1,80 @@
+db.students.insert({name: "phil", home_state: "texas", lucky_number: 165, birthday: {month: 10, day: 31, year: 1990}})
+db.students.insert({name: "chris", home_state: "oregon", lucky_number: 84, birthday: {month: 6, day: 3, year: 1987}})
+db.students.insert({name: "doug", home_state: "michigan", lucky_number: 463, birthday: {month: 8, day: 13, year: 1985}})
+db.students.insert({name: "matt", home_state: "washington", lucky_number: 22, birthday: {month: 5, day: 22, year: 1993}})
+db.students.insert({name: "dylan", home_state: "nevada", lucky_number: 56, birthday: {month: 1, day: 29, year: 1997}})
+
+--- FIND ALL STUDENTS ---
+db.students.find()
+    { "_id" : ObjectId("5a00c9541b686035c0f31dcb"), "name" : "dylan", "home_state" : "nevada", "lucky_number" : 56, "birthday" : { "month" : 1, "day" : 29, "year" : 1997 } }
+    { "_id" : ObjectId("5a00c9871b686035c0f31dcc"), "name" : "matt", "home_state" : "washington", "lucky_number" : 22, "birthday" : { "month" : 5, "day" : 22, "year" : 1993 } }
+    { "_id" : ObjectId("5a00c9a71b686035c0f31dcd"), "name" : "doug", "home_state" : "michigan", "lucky_number" : 463, "birthday" : { "month" : 8, "day" : 13, "year" : 1985 } }
+    { "_id" : ObjectId("5a00c9d71b686035c0f31dce"), "name" : "phil", "home_state" : "texas", "lucky_number" : 165, "birthday" : { "month" : 10, "day" : 31, "year" : 1990 } }
+    { "_id" : ObjectId("5a00ca211b686035c0f31dcf"), "name" : "chris", "home_state" : "oregon", "lucky_number" : 84, "birthday" : { "month" : 6, "day" : 3, "year" : 1987 } }
+
+--- FIND STUDENT WITH STATE = NEVADA ---
+db.students.find({home_state: "nevada"})
+    { "_id" : ObjectId("5a00c9541b686035c0f31dcb"), "name" : "dylan", "home_state" : "nevada", "lucky_number" : 56, "birthday" : { "month" : 1, "day" : 29, "year" : 1997 } }
+
+--- FIND STUDENT WITH LUCKY # GREATER THAN 60 ---
+db.students.find({lucky_number: {$gt: 60}})
+    { "_id" : ObjectId("5a00c9a71b686035c0f31dcd"), "name" : "doug", "home_state" : "michigan", "lucky_number" : 463, "birthday" : { "month" : 8, "day" : 13, "year" : 1985 } }
+    { "_id" : ObjectId("5a00c9d71b686035c0f31dce"), "name" : "phil", "home_state" : "texas", "lucky_number" : 165, "birthday" : { "month" : 10, "day" : 31, "year" : 1990 } }
+    { "_id" : ObjectId("5a00ca211b686035c0f31dcf"), "name" : "chris", "home_state" : "oregon", "lucky_number" : 84, "birthday" : { "month" : 6, "day" : 3, "year" : 1987 } }
+
+--- FIND STUDENT WITH LUCKY NUMBER LESS THAN OR EQUAL TO 84 ---
+db.students.find({lucky_number: {$lte: 84}})
+    { "_id" : ObjectId("5a00c9541b686035c0f31dcb"), "name" : "dylan", "home_state" : "nevada", "lucky_number" : 56, "birthday" : { "month" : 1, "day" : 29, "year" : 1997 } }
+    { "_id" : ObjectId("5a00c9871b686035c0f31dcc"), "name" : "matt", "home_state" : "washington", "lucky_number" : 22, "birthday" : { "month" : 5, "day" : 22, "year" : 1993 } }
+    { "_id" : ObjectId("5a00ca211b686035c0f31dcf"), "name" : "chris", "home_state" : "oregon", "lucky_number" : 84, "birthday" : { "month" : 6, "day" : 3, "year" : 1987 } }
+
+--- FIND STUDENT WITH LUCKY NUMBER BETWEEN 20 AND 28 (INCLUSIVE) ---
+db.students.find({lucky_number: {$in: [20, 21, 22, 23, 24, 25, 26, 27, 28]}})
+    { "_id" : ObjectId("5a00c9871b686035c0f31dcc"), "name" : "matt", "home_state" : "washington", "lucky_number" : 22, "birthday" : { "month" : 5, "day" : 22, "year" : 1993 } }
+
+--- GIVE ALL STUDENTS INTERESTS (an array) WITH INFO IN ONE LINE ---
+db.students.update({}, {$set: {interests: ["coding", "brunch", "MongoDB"]}}, {multi: true})
+    WriteResult({ "nMatched" : 5, "nUpserted" : 0, "nModified" : 5 })
+
+--- ADD SOME INTERESTS TO SPECIFIC STUDENTS ---
+db.students.update({name: "dylan"}, {$push: {interests: "drumming"}})
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+--- ADD TAXES TO SOMEONE'S INTERESTS ---
+db.students.update({name: "doug"}, {$push: {interests: "taxes"}})
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+--- REMOVE TAXES FROM THAT PERSONS INTERESTS ---
+db.students.update({name: "doug"}, {$pull: {interests: "taxes"}})
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+--- REMOVE STUDENT BY NAME ---
+db.students.remove({name: "doug"})
+    WriteResult({ "nRemoved" : 1 })
+
+--- REMOVE STUDENT BY STATE ---
+db.students.remove({home_state: "nevada"})
+    WriteResult({ "nRemoved" : 1 })
+
+--- Remove a student whose lucky number is greater than 5 (JUST ONE) ---
+db.students.remove({lucky_number: {$gt: 5}}, true)
+    WriteResult({ "nRemoved" : 1 })
+
+--- Add a field to each student collection called 'number_of_belts' and set it to 0 ---
+db.students.update({}, {$set: {number_of_belts: 0}}, {multi: true})
+    WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+
+--- Increment this field by 1 for all students in Washington (Seattle Dojo) ---
+db.students.update({home_state: "texas"}, {$set: {number_of_belts: 1}})
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+--- Rename the 'number_of_belts' field to 'belts_earned' ---
+db.students.update({}, {$rename: {number_of_belts: belts_earned}}, {multi: true})
+    WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2
+
+--- Remove the 'lucky_number' field ---
+db.students.update({}, {$unset: {lucky_number: ''}}, {multi: true})
+    WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+--- Add a 'updated_on' field, and set the value as the current date ---
+db.students.update({}, {$currentDate:{updated_on:true}},{multi:true})
+    WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
