@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board</title>
+</head>
+<body>
+    <h1>The Dojo Message Board</h1>
+    <form action='/postMessage' method='post'>
+        <input name='name' placeholder='Name'>
+        <textarea name='content' placeholder='Your message here...'></textarea>
+        <button type='submit'>Post Message</button>
+    </form>
+    <% for(let i = 0; i < messages.length; i++) { %>
+        <p><b>Posted by: <%= messages[i].name %></b></p>
+        <p><small><%= messages[i].createdAt %></small></p>
+        <p><%= messages[i].content %></p>
+        <% for(let j = 0; j < messages[i].comments.length; j++) { %>
+            <p><%= messages[i].comments[j].text %> - <%= messages[i].comments[j].name %></p>
+        <% } %>
+        <form action='/comment/<%= messages[i].id %>' method='post'>
+            <input name='name' placeholder='Name'>
+            <textarea name='text' placeholder='Your comment here...'></textarea>
+            <button type='submit'>Comment</button>        
+        </form>
+    <% } %>
+</body>
+</html>
