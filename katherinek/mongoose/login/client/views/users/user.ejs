@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partials/head %>
+</head>
+<body>
+
+<% include ../partials/header %>
+
+<h3>User Profile</h3>
+
+<% if (user) {%>	
+<ul>
+	<li><%= user.firstname %></li>
+	<li><%= user.lastname %></li>
+	<li><%= user.email %></li>
+</ul>
+<p><a href="/users/<%= user._id %>/edit">Edit</a></p>
+<% } %>
+
+<% include ../partials/footer %>
+</body>
+</html>

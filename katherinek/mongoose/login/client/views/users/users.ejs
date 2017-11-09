@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include ../partials/head %>
+</head>
+<body>
+
+
+<% include ../partials/header %>
+
+<h2>All Users</h2>
+
+<% if (users) { %>
+<ul>
+<% for (var i=0; i < users.length; i++) { %>
+<li><a href="/users/<%= users[i]._id %>"><%= users[i].firstname %> <%= users[i].lastname %></a></li>
+<% } %>
+</ul>
+<% } %>
+
+<% include ../partials/footer %>
+</body>
+</html>
