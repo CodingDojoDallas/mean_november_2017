@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quotes</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <% for (index in quotes) {%>
+        <div>
+            <label>Name</label>
+            <%= quotes[index].name %>
+        </div>
+        <div>
+            <label>Email</label>
+            <%= quotes[index].quote %>
+        </div>
+        <hr>
+    <% } %>
+</body>
+</html>

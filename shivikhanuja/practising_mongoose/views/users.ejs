@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <% for (index in users) {%>
+        <div>
+            <label>Name</label>
+            <%= users[index].name %>
+        </div>
+        <div>
+            <label>Email</label>
+            <%= users[index].email %>
+        </div>
+    <% } %>
+</body>
+</html>
