@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title></title>
+     </head>
+     <body>
+          <script>
+
+
+<!--
+// Challenge 1
+// Print all of the students and their cohort. -->
+
+let students = [
+    {name: 'Remy', cohort: 'Jan'},
+    {name: 'Genevieve', cohort: 'March'},
+    {name: 'Chuck', cohort: 'Jan'},
+    {name: 'Osmund', cohort: 'June'},
+    {name: 'Nikki', cohort: 'June'},
+    {name: 'Boris', cohort: 'June'}
+];
+
+for (let i = 0; i < students.length; i++){
+     console.log("Name: "+ students[i].name + ", Cohort:" + students[i].cohort);
+}
+// <!-- Your console should look like the following:
+//
+// Name: Remy, Cohort: Jan
+// Name: Genevieve, Cohort: March
+// Name: Chuck, Cohort: Jan
+// Name: Osmund, Cohort: June
+// Name: Nikki, Cohort: June
+// Name: Boris, Cohort: June -->
+//
+//
+// <!-- Challenge 2
+// Print out the below object to match the example. -->
+
+let users = {
+    employees: [
+        {'first_name':  'Miguel', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],
+    managers: [
+       {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+       {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+    ]
+ };
+
+ for(var x in users){
+         console.log(x.toUpperCase());
+         for(var i = 0; i < users[x].length; i++){
+            let num = i + 1;
+            let first_name = users[x][i].first_name;
+            let last_name = users[x][i].last_name;
+            let name_length = first_name.length + last_name.length;
+            console.log(`${num} - ${last_name.toUpperCase()}, ${first_name.toUpperCase()} - ${name_length}`);
+         }
+     }
+ // Your console should look like the following:
+ //
+ // EMPLOYEES
+ // 1 - JONES, MIGUEL - 11
+ // 2 - BERTSON, ERNIE - 12
+ // 3 - LU, NORA - 6
+ // 4 - BARKYOUMB, SALLY - 14
+ // MANAGERS
+ // 1 - CHAMBERS, LILLIAN - 15
+ // 2 - POE, GORDON - 9
+
+ </script>
+</body>
+</html>

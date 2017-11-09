@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function Card(suit, value){
+        this.suit = suit;
+        this.value = value;
+        this.show = function(){
+          return `[Suit: ${this.suit}, Value: ${this.value}]\n`
+        }
+      }
+      function Deck(){
+        var self =this;
+        self.cards = [];
+        // creates a deck and resets
+        self.reset();
+        this.show = function(){
+          var string = "Deck: "
+          for (var i = 0; i < this.cards.length; i++) {
+            string += this.cards[i].show()
+          }
+          return string;
+        }
+      }
+      // shuffles the deck
+      Deck.prototype.shuffle = function () {
+        for (var i = 0; i < this.cards.length; i++) {
+          var swap = Math.floor(Math.random()*this.cards.length);
+          console.log("Swapping: ", i, swap);
+          var temp = this.cards[i];
+          this.cards[i] = this.cards[swap];
+          this.cards[swap] = temp;
+        }
+      };
+      // resets the deck
+      Deck.prototype.reset = function () {
+        this.cards = [];
+        var suit = ['Heart', 'Diamond', 'Club', 'Spade'];
+        var value = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+        for (var i = 0; i < suit.length; i++) {
+          for (var j = 0; j < value.length; j++) {
+            this.cards.push(new Card(suit[i],value[j]))
+          }
+        }
+      };
+      // deals a random card
+      Deck.prototype.deal = function () {
+        return this.cards.pop()
+      };
+      function Player(name){
+        this.name = name;
+        this.hand = [];
+      }
+
+      Player.prototype.draw = function(deck) {
+        this.hand.push(deck.deal())
+      }
+      Player.prototype.discard = function(index){
+        return this.hand.splice(index, 1);
+      }
+    </script>
+  </body>
+</html>
