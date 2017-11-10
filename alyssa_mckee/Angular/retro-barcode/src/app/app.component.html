@@ -1,8 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1>Retro Barcode Generator</h1>
 
-<div class="block" [ngStyle]="{'background-color': generateColor() }" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]">
+<div id="time-wrapper">
+
+	<h1>US TimeZone Display</h1>
+
+	<button class="inline-btn" (click)='setTimeZone("PST")' [ngClass] = "{'selected': timeZone == 'PST'}" >PST</button>
+
+	<button class="inline-btn" (click)='setTimeZone("MST")' [ngClass] = "{'selected': timeZone == 'MST'}">MST</button>
+
+	<button class="inline-btn" (click)='setTimeZone("CST")' [ngClass] = "{'selected': timeZone == 'CST'}">CST</button>
+
+	<button class="inline-btn" (click)='setTimeZone("EST")' [ngClass] = "{'selected': timeZone == 'EST'}">EST</button>
+
+	<button class="inline-btn" (click)='setTimeZone("UTC")' >CLEAR</button>
+	
+	<h2>{{time | date: 'medium' : timeZone }} {{timeZone}}</h2>
 
 </div>
+<div id="barcode-wrapper">
+	<h1>Retro Barcode Generator</h1>
 
+	<div class="block" [ngStyle]="{'background-color': generateColor() }" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]">
+
+	</div>
+</div>
 

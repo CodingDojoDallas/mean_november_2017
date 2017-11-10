@@ -14,7 +14,13 @@ export class AppComponent {
 	}
 	return result;
   }
+  timeZone :string = "UTC";
+  setTimeZone(zone :string ) :void{
+	this.timeZone = zone;
+  }
   
-  title = 'app';
+  title :string = 'apps';
+  
+  time = Date.now()
   
 }
