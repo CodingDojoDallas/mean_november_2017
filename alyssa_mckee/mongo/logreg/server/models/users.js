@@ -9,14 +9,14 @@ var bcrypt = require('bcrypt-as-promised');
 var UserSchema = new mongoose.Schema({
 	first_name:{ type: String, required: true },
 	last_name:{ type: String , required: true},
-	email:{ type: String, required: true},
+	email:{ type: String, required: true, unique: [true, "email must be unique"]},
 	birthday:{ type: Date, required: true },
 	password:{ type: String, required: true },
 });
 
 
-//??? figure out later...
-UserSchema.methods.create_user_from_data = function(form_data,callback){
+
+UserSchema.methods.create_user_from_data = function(form_data){
 	var user = this;
 	var error = {};
 	user.first_name = form_data.first_name;
@@ -26,7 +26,6 @@ UserSchema.methods.create_user_from_data = function(form_data,callback){
 	user.password = form_data.password;
 	return user;
 }
-
 
 /* What pre does prior to saving:
 	Pre runs before saving.  
