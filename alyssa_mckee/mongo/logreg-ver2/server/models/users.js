@@ -14,8 +14,6 @@ var UserSchema = new mongoose.Schema({
 	password:{ type: String, required: true },
 });
 
-
-
 UserSchema.methods.create_user_from_data = function(form_data){
 	var user = this;
 	var error = {};
