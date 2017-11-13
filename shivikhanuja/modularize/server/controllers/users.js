@@ -11,7 +11,7 @@ module.exports = {
     index: (req, res) => {
 
         User.find({}, (err, users) => {
-            return res.render('users/index', { users: users, errors: errors });
+            return res.render('users/index', { users: users, errors: [] });
         });
     },
     new: (req, res) => {
@@ -43,15 +43,3 @@ module.exports = {
     }
 }
 
-app.post('/result',function(request,response){
-    var user = new User(request.body)
-    user.save(function(error){
-        if(error){
-            request.session.errors = user.errors;
-            response.redirect('/')
-        }
-        else{
-        response.redirect('/users')
-        }        
-    });
-});
