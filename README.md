@@ -36,3 +36,4 @@ Figuring It Out - https://youtu.be/rTwlnh3YmQc <br>
 Modularize and Associate - https://youtu.be/cnFTv4ZNN3M <br>
 Angular/Typescript - https://youtu.be/6sH2WiT4Flk <br>
 Componenets - https://youtu.be/0A-iW5vmQT8 <br>
+Events - https://youtu.be/ZL80gzRwh7M <br>
