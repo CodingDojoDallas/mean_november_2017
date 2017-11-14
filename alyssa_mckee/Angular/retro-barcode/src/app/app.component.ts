@@ -18,6 +18,10 @@ export class AppComponent {
   setTimeZone(zone :string ) :void{
 	this.timeZone = zone;
   }
+  switches :string[] = ["OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF"];
+  toggle(index :number) :void {
+	this.switches[index] = this.switches[index] === "OFF" ? "ON" : "OFF";
+  }
   
   title :string = 'apps';
   

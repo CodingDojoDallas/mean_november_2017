@@ -1,3 +1,21 @@
+#switch-wrapper{
+	width: 600px;
+	text-align: center;
+	margin-top: 100px;
+}
+.switch{
+	margin-left: 50px;
+	height: 55px;
+	width: 55px;
+	margin-bottom: 50px;
+}
+.ON{
+	background: limegreen;
+}
+
+.OFF{
+	background: pink;
+}
 #barcode-wrapper{
 	width: 600px;
 	text-align: center;
@@ -12,6 +30,7 @@
 #time-wrapper{
 	width: 600px;
 	text-align: center;
+	margin-top: 100px;
 }
 .inline-btn{
 	margin-left: 50px;

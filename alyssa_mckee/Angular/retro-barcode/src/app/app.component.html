@@ -1,5 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<div id="switch-wrapper">
+	<h1>Switchboard</h1>
+		<button class="switch" 
+		[ngClass]="switch" 
+		*ngFor='let switch of switches; let idx = index'
+		(click)='toggle(idx)'>
+			{{switch}}
+		</button>
+</div>
 <div id="time-wrapper">
 
 	<h1>US TimeZone Display</h1>
