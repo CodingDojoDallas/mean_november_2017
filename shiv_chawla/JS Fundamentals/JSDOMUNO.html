@@ -1,0 +1,32 @@
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul> 
+<script>
+/*     function appendList(array, id){ //function that takes an array and the id of an element
+
+        for(var i = 0; i< array.length; i++){ //loop through the length of the array
+            let list_value = document.createElement('li'); //set a variable to create the element of an li because it's a UL up top that we're adding shit to
+            list_value.innerHTML = array[i]; //modify innerHTML content with the array value
+            document.getElementById(id).appendChild(list_value); //append DOM element with the 'fruit'
+        }
+    };
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, target_id); */
+    function appendList(array, element, id){ //function that takes an array and the id of an element
+
+        for(var i = 0; i< array.length; i++){ //loop through the length of the array
+            let list_value = document.createElement(element); //set a variable to create the element of an li because it's a UL up top that we're adding shit to
+            list_value.innerHTML = array[i]; //modify innerHTML content with the array value
+            document.getElementById(id).appendChild(list_value); //append DOM element with the 'fruit'
+        }
+    };
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, "li", target_id);
+</script>   
+</body>
+</html>

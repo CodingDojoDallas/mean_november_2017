@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <title>Animals</title>
+</head>
+<body>
+    <h1>These are your friends</h1>
+    <% for (var x=0; x< animals.length; x++){ %>
+        <p>ID: <%= animals[x].id %></p>
+        <p>Name: <%= animals[x].name %></p>
+        <p>Color: <%= animals[x].color %></p>
+        <a href='/animals/<%= animals[x].id %>'>GO TO ANIMAL</a>
+    <% } %>
+    <button><a href='/animals/new'>MAKE MORE ANIMAL</a></button>
+</body>
+</html>

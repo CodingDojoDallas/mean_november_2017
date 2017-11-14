@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <title>Animal Output</title>
+</head>
+<body>
+    <h1>WHO YOU ARE</h1>
+    <p>Your Name: <%= animal[0].name %></p>
+    <p>Color: <%= animal[0].color %></p>
+    <p>Created At: <%= animal[0].createdAt %></p>
+    <p>Updated At: <%= animal[0].updatedAt %></p>
+    <form action='/animals/edit/<%= animal[0].id %>'>
+        <input type='submit' value="DO YOU WANT TO CHANGE THIS ANIMAL">
+    </form>
+    <form action='/animals/destroy/<%= animal[0].id %>' method="post">
+        <input type='submit' value="DO YOU HATE THIS ANIMAL">
+    </form>
+    
+</body>
+</html>
