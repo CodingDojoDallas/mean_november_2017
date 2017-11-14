@@ -1,0 +1,135 @@
+<h1>Registration</h1>
+<div class="message" *ngIf='message'>
+	<p>{{message}}</p>
+	<p>Have a wonderful day!</p>
+</div>
+<h2>Account Information</h2>
+<form (submit)='onSubmit($event)' #form = 'ngForm'>
+	<div>
+		*First Name: 
+		<input type="text" 
+			name="first_name"
+			required
+			[(ngModel)]='user.first_name'
+			#first_name='ngModel'/>
+		<span class="error" *ngIf="first_name.invalid">
+			{{first_name.errors | json}}
+		</span>
+	</div>
+	<div>
+		*Last Name: 
+		<input type="text" 
+			name="last_name"
+			required
+			[(ngModel)]='user.last_name'
+			#last_name='ngModel'/>
+		<span class="error" *ngIf="last_name.invalid">
+			{{last_name.errors | json}}
+		</span>
+	</div>
+	<div>
+		*Email: 
+		<input type="text" 
+			name="email"
+			required
+			[(ngModel)]='user.email'
+			#email='ngModel'/>
+		<span class="error" *ngIf="email.invalid">
+			{{email.errors | json}}
+		</span>
+	</div>
+	<div>
+		*Password: 
+		<input type="password" 
+			name="password"
+			required
+			minlength='16'
+			[(ngModel)]='user.password'
+			#password='ngModel'/>
+		<span class="error" *ngIf="password.invalid">
+			{{password.errors | json}}
+		</span>
+	</div>
+	<div>
+		*Password Confirmation: 
+		<input type="password" 
+			name="password_confirmation"
+			required
+			[(ngModel)]='user.password_confirmation'
+			#password_confirmation='ngModel'/>
+		<span class="error" *ngIf="user.password != user.password_confirmation">
+			passwords must match"
+		</span>
+	</div>
+	<div>
+		*Street Address: 
+		<input type="text" 
+			name="address"
+			required
+			[(ngModel)]='user.address'
+			#address='ngModel'/>
+		<span class="error" *ngIf="address.invalid">
+			{{address.errors | json}}
+		</span>
+	</div>
+	<div>
+		Unit/Apt #: 
+		<input type="text" 
+			name="unit"
+			[(ngModel)]='user.unit'
+			#unit='ngModel'/>
+		<span class="error" *ngIf="unit.invalid">
+			{{unit.errors | json}}
+		</span>
+	</div>
+	<div>
+		*City: 
+		<input type="text" 
+			name="city"
+			required
+			[(ngModel)]='user.city'
+			#city='ngModel'
+		/>
+		<span class="error" *ngIf="city.invalid">
+			{{city.errors | json}}
+		</span>
+	</div>
+	<div>
+		*State: 
+		<select 
+			name="state"
+			required
+			[(ngModel)]='user.state'
+			#state = 'ngModel'>
+			<option>Texas</option>
+			<option>Alaska</option>
+			<option>Nebraska</option>
+			<option>North Dakota</option>
+			<option>Tennessee</option>
+			<option>Mississippi</option>
+			<option>Maine</option>
+			<option>Rhode Island</option>
+			<option>Colorado</option>
+			<option>Elsewhere</option>
+		</select>
+		<span class="error" *ngIf="state.invalid">
+			{{state.errors | json}}
+		</span>
+	</div>
+	<div>
+		*I'm Feeling Lucky: 
+		<input type="radio" name="lucky" value="yes" required
+		[(ngModel)]='user.lucky'/> Yes
+		<input type="radio" name="lucky" value="no" required
+		[(ngModel)]='user.lucky'/> No
+		<span class="error" *ngIf="! user.lucky">
+			Chooseing how you feel is required
+		</span>
+	</div>
+	<button *ngIf='form.valid'>
+		Register
+	</button>
+	<button disabled *ngIf='form.invalid'>
+		Register
+	</button>
+</form>
