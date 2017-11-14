@@ -41,3 +41,4 @@ Angular/Typescript - https://youtu.be/6sH2WiT4Flk <br>
 Componenets - https://youtu.be/0A-iW5vmQT8 <br>
 Events - https://youtu.be/ZL80gzRwh7M <br>
 Input/Output Architecture - https://youtu.be/R4sPiVvbxbo <br>
+Services/Http Module - https://youtu.be/i1GnJVpkUsI <br>
