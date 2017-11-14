@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+<div id="buttons">
+    <button class="tz" id="PST" (click)="PST()">PST</button>
+    <button class="tz" id="MST" (click)="MST()">MST</button>
+    <button class="tz" id="CST" (click)="CST()">CST</button>
+    <button class="tz" id="EST" (click)="EST()">EST</button>
+    <button class="clear" (click)="clear()">Clear</button>
+</div>
+<h3 id="result">{{ today | date:'medium':timezone }}</h3>

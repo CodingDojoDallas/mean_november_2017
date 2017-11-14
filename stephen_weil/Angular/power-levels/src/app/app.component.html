@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col">
+        <form (submit)="calc_power()">
+            Initial Power Level: <select name="power" required min="1" max="100" [(ngModel)]="powerlevel" #power="ngModel">
+                <option *ngFor="let number of numbers" value="{{ number }}">{{ number }}</option>
+            </select>
+            <button type="submit">Calculate Powers</button>
+            <p class="error" *ngIf="!power.valid || hacked()">Must Select Initial Power Level Between 1-100</p>
+        </form>
+    </div>
+    <div class="col right">
+        <img src="https://orig00.deviantart.net/50d5/f/2013/136/a/e/goku____super_saiyan_by_thevulcanresistance-d65hn32.jpg" alt="Goku">
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <app-human [powerlevel]="output"></app-human>
+    </div>
+    <div class="col">
+        <app-saiyan [powerlevel]="output"></app-saiyan>
+    </div>
+    <div class="col">
+        <app-super-saiyan [powerlevel]="output"></app-super-saiyan>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <app-super-saiyan-two [powerlevel]="output"></app-super-saiyan-two>
+    </div>
+    <div class="col">
+        <app-super-saiyan-three [powerlevel]="output"></app-super-saiyan-three>
+    </div>
+    <div class="col">
+        <app-super-saiyan-four [powerlevel]="output"></app-super-saiyan-four>
+    </div>
+</div>

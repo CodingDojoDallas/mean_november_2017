@@ -1,0 +1,9 @@
+span{
+    color: red;
+}
+div#success{
+    padding: 1em;
+    border: 1px solid black;
+    color: green;
+    display: none;
+}

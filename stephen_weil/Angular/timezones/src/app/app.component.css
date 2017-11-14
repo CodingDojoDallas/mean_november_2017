@@ -1,0 +1,12 @@
+h1, h3{
+    text-align: center;
+}
+div#buttons{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+div#buttons button{
+    border: 1px solid black;
+    margin: 2.5em;
+}
