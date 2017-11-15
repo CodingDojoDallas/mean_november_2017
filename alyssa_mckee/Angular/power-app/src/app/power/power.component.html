@@ -1,0 +1,20 @@
+<form #powerform='ngForm' (submit)='onSubmit($event)'>
+	Initial Power Level: <input 
+		type="number"
+		name="lv"
+		min="1"
+		max="100"
+		required
+		[(ngModel)]='power.lv'
+		#lv = 'ngModel'/>
+		<button type="submit" [disabled]='! powerform.valid'>CalculatePowers</button>
+		<span *ngIf='lv.invalid'>{{lv.errors | json }}</span>
+</form>
+<br/>
+<br/>
+<app-human [mypower]='newPower'></app-human>
+<app-saiyan [mypower]='newPower'></app-saiyan>
+<app-ssj [mypower]='newPower'></app-ssj>
+<app-ssj2 [mypower]='newPower'></app-ssj2>
+<app-ssj3 [mypower]='newPower'></app-ssj3>
+<app-ssj4 [mypower]='newPower'></app-ssj4>
