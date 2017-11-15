@@ -34,18 +34,6 @@ app.set('view engine', 'ejs');
 
 routes(app);
 
-
-
-
-
-
-
-
-
-
-
-
-
 //***** Step 3 *******
 //set up port MUST be at the bottom of the document!
 app.listen(port, () => console.log(`listening on port ${port}...`));
