@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { Task } from '../task';
+import { TaskService } from '../task.service';
 @Component({
   selector: 'app-task-new',
   templateUrl: './task-new.component.html',
@@ -11,7 +12,7 @@ export class TaskNewComponent implements OnInit {
 
   @Output() taskEventEmitter = new EventEmitter();
 
-  constructor() { 
+  constructor(private _taskService :TaskService) { 
 	this.task = new Task();
   }
   
@@ -21,7 +22,8 @@ export class TaskNewComponent implements OnInit {
   onSubmit(event){
 	event.preventDefault()
 	
-	this.taskEventEmitter.emit(this.task)
+	this._taskService.createTask(this.task);
+	//this.taskEventEmitter.emit(this.task)
 	
 	this.task = new Task();
   }
