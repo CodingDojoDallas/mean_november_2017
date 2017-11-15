@@ -9,7 +9,7 @@ export class PowerComponent implements OnInit {
   power = {};
   newPower = {};
   constructor() { 
-	this.newPower.lv = 0;
+	this.newPower = {lv: 0}
   }
 
   ngOnInit() {
