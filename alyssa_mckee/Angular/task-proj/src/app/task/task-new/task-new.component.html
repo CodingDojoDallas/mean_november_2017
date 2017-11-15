@@ -1,0 +1,14 @@
+<h3>{{title}}</h3>
+<form #formdata='ngForm' (submit)='onSubmit($event)'>
+	Name: 
+	<input type="text"
+	name="name"
+	required
+	[(ngModel)] = "task.name"
+	#name='ngModel'
+	/>
+	<span *ngIf="name.invalid">
+		{{name.errors | json }}
+	</span>
+	<button type="submit" [disabled]='! formdata.valid'>Create Task</button>
+</form>
