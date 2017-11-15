@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Github Score</title>
+</head>
+<body>
+  <h1>Github Score Calculator</h1>
+  <form (submit)="findUser(formData)" #formData="ngForm">
+      <input
+        type="text"
+        name='username'
+        required
+        placeholder='Username'
+        [(ngModel)]='username'
+      >
+    <button [disabled]="!formData.valid">Find User</button>
+  </form>
+  <div *ngIf='exists'>
+    <h3>Score: {{score}}</h3>
+    <p class='red' *ngIf="score < 20">Needs work!</p>
+    <p class='orange' *ngIf="score >= 20 && score < 50">A decent start!</p>
+    <p *ngIf="score >= 50 && score < 100">Doing good!</p>
+    <p class='green' *ngIf="score >= 100 && score < 200">Great job!</p>
+    <p class='blue' *ngIf="score >= 200">Github Elite!</p>
+  </div>
+  <div *ngIf='exists == false'>
+    <h3>User {{username}} does not exist. Please input an existing user!</h3>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+button{
+    padding:5px 10px 5px 10px;
+    width:70px;
+}
+.up{
+    background-color:green;
+    display:block;
+    margin:auto;    
+    margin-top:20px;
+    
+}
+.down{
+    background-color:red;
+    margin:auto;
+    display:block;
+    margin-top:10px;
+    
+}
+.delete{
+    background-color:indigo;
+    color:white;
+    margin:auto;
+    display:block;
+    margin-top:10px;    
+    
+}
+.buttons{
+    display:inline-block;
+    width:100px;
+    height:150px;
+    text-align:right;
+    float:right;
+    vertical-align:top;
+}
+.quote{
+    width:90%;
+    height:150px;
+    border:1px solid black;
+    margin-bottom:10px;
+}
+p{
+    display:inline-block;
+    line-height:150px;
+    width:60%;
+    vertical-align:top;  
+    margin: 0 0 0 0;
+    padding-left:10px;    
+}
+h2{
+    display:inline-block;
+    line-height:150px;
+    width:50px;
+    height:100%;
+    margin: 0 0 0 0;
+    vertical-align:top;
+    
+}
+.vote{
+    display:inline-block;
+}

@@ -1,0 +1,37 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+div{
+    border:1px black solid;
+    background-color:teal;
+}
+app-header div{
+    display:block;
+    margin:10px;
+    height:100px;
+}
+    app-header h1{
+        line-height:100px;
+        margin-left:20px;
+    }
+app-main div{
+    display:inline-block;
+    height:500px;
+    width:73%;
+    margin:10px;    
+}
+app-nav div{
+    display:inline-block;
+    height:250px;
+    width:23%;
+    margin:10px;
+    vertical-align: top;
+}
+app-nav button{
+    padding:5px 30px 5px 30px;
+    display:block;
+    margin:auto;
+    margin-top:10px;
+    box-shadow: 5px 5px 10px black;
+}
