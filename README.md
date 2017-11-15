@@ -43,3 +43,4 @@ Events - https://youtu.be/ZL80gzRwh7M <br>
 Input/Output Architecture - https://youtu.be/R4sPiVvbxbo <br>
 Services/Http Module - https://youtu.be/i1GnJVpkUsI <br>
 Routes - https://youtu.be/OFDva1TLqXM <br>
+Full Mean Part I - https://youtu.be/Uwl8miuLmbY <br>
