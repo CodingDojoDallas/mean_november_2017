@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Ninjas</title>
+	<script type="text/javascript">
+		/** ES5 version
+		function Ninja(name){
+			this.name = name;
+			this.health = 100;
+			var speed = 3;
+			var strength = 3;
+			
+			this.getSpeed = function(){
+				return speed;
+			}
+			this.getStrength = function(){
+				return strength;
+			}
+		}
+		Ninja.prototype.sayName= function(){
+			console.log(this.name);
+		}
+		Ninja.prototype.showStats= function(){
+			this.sayName();
+			console.log("Health: "+ this.health +"\nSpeed: "+ this.getSpeed() + "\nStrength: "+ this.getStrength());
+		}
+		Ninja.prototype.drinkSake=function(){
+			this.health += 10;
+		}
+		Ninja.prototype.punch= function(target){
+			if (target instanceof Ninja){
+				target.health -= 5;
+				console.log(target.name + " was punched by "+ this.name+ " and lost 5 health!")
+			}
+		}
+		Ninja.prototype.kick= function(target){
+			if (target instanceof Ninja){
+				target.health -= 15;
+				console.log(target.name + " was kicked by "+ this.name+ " and lost 15 health!")
+			}
+		}
+		**/
+		//ES6
+		class Ninja{
+			constructor(name){
+				this.name = name;
+				this.strength = 3;
+				this.speed = 3;
+				this.health = 100;
+			}
+			sayName(){
+				console.log(this.name);
+			}
+			showStats(){
+				this.sayName();
+				console.log("Health: "+ this.health +"\nSpeed: "+ this.speed + "\nStrength: "+ this.strength);
+			}
+			drinkSake(){
+				this.health += 10;
+			}
+			punch(target){
+				if (target instanceof Ninja){
+				target.health -= 5;
+				console.log(target.name + " was punched by "+ this.name+ " and lost 5 health!")
+				}
+				else
+					console.log(this.name + " punched a " + target.constructor.name)
+			}
+			kick(target){
+				if (target instanceof Ninja){
+					target.health -= 15;
+					console.log(target.name + " was kicked by "+ this.name+ " and lost 15 health!")
+				}
+				else
+					console.log(this.name + " kicked a " + target.constructor.name)
+			}
+		}
+		class Sensei extends Ninja{
+			constructor(name){
+				super(name)
+				this.health = 200;
+				this.knowledge = [
+					"have you tried turning it off and back on again?",
+					"The best thing about a boolean is even if you are wrong, you are only off by a bit.",
+					"Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.",
+					"In order to understand recursion, one must first understand recursion."
+					]
+			}
+			speakWisdom(){
+				super.drinkSake();
+				let wisdom = this.knowledge[Math.floor(Math.random()*this.knowledge.length)]
+				console.log(wisdom);
+			}
+		}
+		var Rock = function(){
+			this.size= 3;
+		}
+		let rock = new Rock();
+
+		let hinata = new Ninja("Hinata");
+		hinata.showStats();
+		let neji = new Ninja("Neji");
+		neji.showStats();
+		hinata.punch(neji);
+		hinata.kick(neji);
+		neji.showStats();
+		neji.kick(rock);
+		let kakashi = new Sensei("kakashi");
+		kakashi.showStats();
+		neji.punch(kakashi);
+		kakashi.showStats();
+		kakashi.speakWisdom();
+		kakashi.showStats();
+	</script>
+</head>
+<body>
+	open the console
+</body>
+</html>

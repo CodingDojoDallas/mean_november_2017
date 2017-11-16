@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="<%= router('create_session') %>" method="POST">
+		Email: <input type="text" name="email" id="email"/>
+		<br/>
+		Password: <input type="password" name="password" id="password"/>
+		<br/>
+		<button type="submit">Login</button>
+		<% if (errors) { %>
+			<% for (var x in errors) { %>
+				<p class="error"><%= errors[x].message %></p>
+			<% } %>
+		<% } %>
+	</form>
+	<br/>
+	<button onclick='location="<%= router('registration') %>"'>Goto Registration</button>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	<button id="btn">clickme</button>
+	<h1 id="target"></h1>
+	
+	<button id="hover">hover me</button>
+	
+	<script type="text/javascript">
+		const $Dojo = function(id){
+			return (function($dojo){
+				$dojo.element = document.getElementById(id)
+				
+				$dojo.click = function(callback){
+					this.element.addEventListener("click", callback);
+				}
+				
+				$dojo.hover = function(hoverin, hoverout){
+					this.element.addEventListener("mouseenter", hoverin);
+					this.element.addEventListener("mouseleave", hoverout);
+				}
+				
+				$dojo.text = function(text){
+					this.element.innerHTML = text;
+				}
+				return $dojo;
+			})({})
+		};
+		
+		
+		
+		$Dojo("btn").click(function(){
+			$Dojo("target").text("HelloWorld");
+		});
+		
+		$Dojo("hover").hover(
+			function(){
+				console.log("Hovered in!")
+			},
+			function(){
+				console.log("Hovered out!")
+			}
+		);
+		$Dojo("hover").click(function(){console.log("Clicked!")})
+		
+	</script>
+</body>
+</html>

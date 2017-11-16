@@ -1,0 +1,40 @@
+*{
+	font-family: "Comic Sans MS", sans-serif;
+}
+
+form{
+	width: 500px;
+	
+}
+	form label{
+		display: inline-block;
+		width: 250px;
+	}
+	form input{
+		display: inline-block;
+		width: 246px;
+	}
+	form button{
+		margin-top: 10px;
+		display: inline-block;
+		width: 100%;
+	}
+
+.red{
+	color: red;
+}
+.orange{
+	color: orange;
+}
+.black{
+	color: black;
+}
+.green{
+	color: green;
+}
+.blue{
+	color: blue;
+}
+img{
+	width: 100px;
+}

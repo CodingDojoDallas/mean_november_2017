@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Packs</title>
+</head>
+<body>
+	<h1>Packs</h1>
+	<img src="/mongeese.png" alt="an image of 4 mongeese in the savanah"/>
+	<br/>
+	<table>	
+		<tr>
+			<th>Pack Name</th>
+			<th>Animal</th>
+			<th>Members</th>
+		</tr>
+		<% for (var x = 0; x< packs.length; x++) {%>
+			<tr>
+				<td>
+					<a href="/packs/<%= packs[x]._id %>"><%= packs[x].pack_name %></a>
+				</td>
+				<td>
+					<%= packs[x].animal %>
+				</td>
+				<td>
+					<%= packs[x].pack_size %>
+				</td>
+			</tr>
+		<% } %>
+	</table>
+	<a href="/packs/new">Add a Pack</a>
+</body>
+</html>

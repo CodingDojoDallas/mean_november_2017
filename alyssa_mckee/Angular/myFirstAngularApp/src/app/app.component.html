@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+	<table>
+		<thead>
+			<tr>
+				<th>email</th>
+				<th>Importance</th>
+				<th>subject</th>
+				<th>content</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let letter of mail">
+				<td>{{letter.email}}</td>
+				<td *ngIf="letter.importance">High</td>
+				<td *ngIf="! letter.importance">Low</td>
+				<td>{{letter.subject}}</td>
+				<td>{{letter.content}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

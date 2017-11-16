@@ -1,0 +1,39 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	color: white;
+}
+body{
+	background: green;
+}
+#deck{
+	background-image:url("cards/b1pl.png");
+	height: 96px;
+	width: 300px;
+	text-align: right;
+	border: 1px solid black;
+	margin-left: 100px;
+}
+#player, #dealer{
+	height: 30vh;
+	
+}
+button{
+	color: black;
+	padding: 5px;
+}
+h2{
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 50px;
+	
+}
+#playerhand, #dealerhand{
+	display: inline-block;
+	vertical-align: middle;
+}
+.title{
+	width: fit-content;
+	margin: 10px auto;
+	font-size: 40px;
+}

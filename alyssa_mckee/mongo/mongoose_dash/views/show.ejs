@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Packs</title>
+	<style type="text/css">
+	.inline {
+	  display: inline;
+	}
+
+	.link-button {
+	  background: none;
+	  border: none;
+	  color: blue;
+	  text-decoration: underline;
+	  cursor: pointer;
+	  font-size: 1em;
+	  font-family: serif;
+	}
+	.link-button:focus {
+	  outline: none;
+	}
+	.link-button:active {
+	  color:red;
+	}
+	</style>
+</head>
+<body>
+	<h1><%= pack.pack_name %></h1>
+	<p>Animal: <%= pack.animal %></p>
+	<p>Size: <%= pack.pack_size %></p>
+	<p><a href="/packs/edit/<%= pack._id %>">Edit Pack</a>
+	|
+	<form method="post" action="/packs/destroy/<%= pack._id %>" class="inline">
+		<button type="submit" class="inline link-button">Delete Pack</button>
+	</form>
+	|
+	<a href="/">Dashboard</a>
+	</p>
+	
+</body>
+</html>

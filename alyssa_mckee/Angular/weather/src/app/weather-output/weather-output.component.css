@@ -1,0 +1,32 @@
+#weather_wrapper{
+	width: 80%;
+	margin-left: 10%;
+	border: 1px solid black;
+	padding: 20px;
+}
+#info{
+	text-align: left;
+	vertical-align: top;
+	display: inline-block;
+	width: 40%;
+}
+#city{
+	display: inline-block;
+}
+nav{
+	margin-bottom: 20px;
+}
+.error{
+	color: red;
+}
+.btn {
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 4px 8px 4px 8px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 3px ;
+}

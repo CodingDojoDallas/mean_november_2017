@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Objects</title>
+	<script type="text/javascript">
+	let students = [
+		{name: 'Remy', cohort: 'Jan'},
+		{name: 'Genevieve', cohort: 'March'},
+		{name: 'Chuck', cohort: 'Jan'},
+		{name: 'Osmund', cohort: 'June'},
+		{name: 'Nikki', cohort: 'June'},
+		{name: 'Boris', cohort: 'June'}
+	];
+	let users = {
+		employees: [
+			{'first_name':  'Miguel', 'last_name' : 'Jones'},
+			{'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+			{'first_name' : 'Nora', 'last_name' : 'Lu'},
+			{'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+		],
+		managers: [
+		   {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+		   {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+		]
+	 };
+	
+	function print_students(arr){
+		for(let i = 0; i<arr.length; i++){
+			console.log(`Name: ${arr[i].name}, Cohort: ${arr[i].cohort}`)
+		}
+			
+		
+	}
+	function print_users(obj){
+		 for(role in obj){
+			console.log(role.toUpperCase())
+			for(let i = 0; i<obj[role].length; i++){
+				let user = obj[role][i]
+				console.log(`${i+1} - ${user.last_name.toUpperCase()}, ${user.first_name.toUpperCase()} - ${user.first_name.length+user.last_name.length}`)
+			}
+		 }
+	
+	}
+	</script>
+</head>
+<body>
+	open the console
+</body>
+</html>

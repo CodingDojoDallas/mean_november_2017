@@ -1,0 +1,10 @@
+#maincontent{
+	background: lightblue;
+	width: 580px;
+	margin-left: 30px;
+	border: solid 3px darkblue;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	height: 380px;
+}

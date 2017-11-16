@@ -1,0 +1,24 @@
+<nav>
+	<form (submit)='onSubmit($event)' #query='ngForm'>
+		<input type="text"
+			name="city"
+			placeholder="Enter A City"
+			required
+			[(ngModel)]='input'
+			/>
+		<a [routerLink]='["/",input]' [hidden]='! query.valid' class='btn'>Retrieve</a> <!--hacky solution, I dont know how do yet...-->
+	</form>
+		
+</nav>
+<div id="weather_wrapper">
+	<h2>{{city | uppercase }}</h2>
+	<p class="error">{{err}}</p>
+	<div id="info">
+		<p>Humidity: {{humidity}}%</p>
+		<p>Temperature (Current): {{cur_temp}}F</p>
+		<p>Temperature (High): {{hi_temp}}F</p>
+		<p>Temperature (Low): {{lo_temp}}F</p>
+		<p>Status: <span *ngFor='let status of statuses'>{{ status }}, </span></p>
+	</div>
+	<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple71/v4/72/82/7c/72827c2c-646f-b5a8-09bf-49524da8fd39/source/256x256bb.jpg" alt="" id="city"/>
+</div>

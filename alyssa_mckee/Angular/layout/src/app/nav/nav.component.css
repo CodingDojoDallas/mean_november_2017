@@ -1,0 +1,15 @@
+#navcontent{
+	background: lightblue;
+	width: 200px;
+	border: solid 3px darkblue;
+	display: inline-block;
+	vertical-align: top;
+	height: 400px;
+}
+button{
+	display: block;
+	text-align: center;
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 10px;
+}

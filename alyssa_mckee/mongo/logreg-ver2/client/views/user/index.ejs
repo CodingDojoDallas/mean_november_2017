@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<header>
+<a href="<%= router('logout') %>">Logout</a> | <a href="<%= router('show_user', {id: current_user._id }) %>">My Profile</a>
+</header>
+	<h1>User Dashboard</h1>
+	<% for (var x = 0; x < users.length; x++) { %>
+		<p>First Name: <%= users[x].first_name %></p>
+		<p>Last Name: <%= users[x].last_name%></p>
+		<p>Email: <%= users[x].email%></p>
+		<p>Birthday: <%= users[x].birthday %></p>
+		<p><a href="<%= router('show_user', {id: users[x]._id }) %>">Profile</a></p>
+		<br/>
+	<% } %>
+</body>
+</html>

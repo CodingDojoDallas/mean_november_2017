@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Quotes</title>
+</head>
+<body>
+<h1>Quotes</h1>
+	<% for (var x = 0, length = quotes.length; x != length; x++ ) {%>
+		<p>"<%= quotes[x].quote %>"</p>
+		<p> - <%= quotes[x].name %> <%= quotes[x].createdAt %></p>
+		<hr/>
+	<% } %>
+</body>
+</html>

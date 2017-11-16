@@ -1,0 +1,17 @@
+<h1>GitHub Score</h1>
+
+<form #form='ngForm' (submit)='onSubmit($event)'><!--
+	--><label for="name">GitHub UserName:</label><!--
+	--><input type="text"
+	name="name"
+	[(ngModel)] = 'username'
+	required
+	/><!--
+	--><br/>
+	<button type="submit" [disabled]='! form.valid && ! working '>Calculate my GitHub Score</button>
+</form>
+<br/>
+<hr/>
+<h1>Your Score: {{score}}</h1>
+<h3 [ngClass]='message.color'>{{message.content}}</h3>
+<img [src]='avatar'/>
