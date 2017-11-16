@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+}
+div#info{
+    text-align: center;
+}
+div#player, div#dealer, div#options{
+    margin: 2.5em auto;
+    width: 50%;
+    text-align: center;
+}
+div#actions{
+    display: none;
+}
+div.card{
+    width: 71px;
+    height: 96px;
+    display: inline-block;
+    margin: 1em;
+}
+form#bet{
+    display: none;
+}
+p#message{
+    font-size: 30px;
+    text-align: center;
+}

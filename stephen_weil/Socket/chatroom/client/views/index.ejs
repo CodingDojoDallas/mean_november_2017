@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <h1>Login</h1>
+                <form action="/login" method="post">
+                    <p>Username:
+                        <input type="text" name="username">
+                    </p>
+                    <p>Password:
+                        <input type="password" name="password">
+                    </p>
+                    <p>
+                        <input type="submit" name="submit" value="Login">
+                    </p>
+                    <% if (status === "login") { %>
+                        <% if (typeof(errors) === 'string') { %>
+                            <p class="error"><%= errors %></p>
+                        <% } else if(typeof(errors) !== 'undefined') { %>
+                            <% for (var key in errors.errors) { %>
+                                <p class="error"><%= errors.errors[key].message %></p>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </form>
+            </div>
+            <div class="col-5">
+                <h1>Registration</h1>
+                <form action="/register" method="post">
+                    <p>Username:
+                        <input type="text" name="username">
+                    </p>
+                    <p>Password:
+                        <input type="password" name="password">
+                    </p>
+                    <p>Confirm Password:
+                        <input type="password" name="confirm">
+                    </p>
+                    <p>
+                        <input type="submit" name="submit" value="Register">
+                    </p>
+                    <% if (status === "register") { %>
+                        <% if (typeof(errors) === 'string') { %>
+                            <p class="error"><%= errors %></p>
+                        <% } else if(typeof(errors) !== 'undefined') { %>
+                            <% for (var key in errors.errors) { %>
+                                <p class="error"><%= errors.errors[key].message %></p>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

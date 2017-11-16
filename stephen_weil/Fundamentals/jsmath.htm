@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function zero_negativity(arr) {
+            ret = true;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < 0) {
+                    ret = false;
+                    break;
+                }
+            }
+            return ret;
+        }
+        /*
+        let test1 = zero_negativity([1,2,3]);
+        let test2 = zero_negativity([1,2,-3]);
+        */
+        function is_even(num) {
+            return num % 2 == 0;
+        }
+        /*
+        let test1 = is_even(5);
+        let test2 = is_even(6);
+        */
+        function how_many_even(arr) {
+            var count = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (is_even(arr[i])) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        /*
+        let test1 = how_many_even([1,2,3,4,5]);
+        let test2 = how_many_even([-1,-2,-3,-4,-5,-6]);
+        */
+        function create_dummy_array(num) {
+            if (num < 1) { return []; }
+            var dummy_array = [];
+            for (var i = 0; i < num; i++) {
+                let rng = Math.floor(Math.random()*num);
+                dummy_array.push(rng);
+            }
+            return dummy_array;
+        }
+        /*
+        let test1 = create_dummy_array(5);
+        let test2 = create_dummy_array(0);
+        */
+        function random_choice(arr) {
+            if (arr.length < 1) { return null; }
+            let rng = Math.floor(Math.random()*arr.length);
+            return arr[rng];
+        }
+        let test1 = random_choice([]);
+        let test2 = random_choice([1,2,3,4,5]);
+
+        console.log(test1);
+        console.log(test2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

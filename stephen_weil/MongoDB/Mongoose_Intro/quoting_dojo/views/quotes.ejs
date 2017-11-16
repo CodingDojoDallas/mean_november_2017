@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QuotingDojo</title>
+    <link rel="stylesheet" href="quotes.css">
+</head>
+<body>
+    <h2>Here are the awesome quotes!</h2>
+    <% if (typeof(quotes) != 'undefined') { %>
+        <% for (var x in quotes) { %>
+            <p>"<%= quotes[x].quote %>"</p>
+            <p class="author">-<%= quotes[x].name %> at <%= quotes[x].createdAt %></p>
+            <hr>
+        <% } %>
+    <% } %>
+    <button id="return"><a href="/">Return to Homepage!</a></button>
+</body>
+</html>

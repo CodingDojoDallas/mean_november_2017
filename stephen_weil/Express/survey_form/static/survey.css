@@ -1,0 +1,21 @@
+form{
+    margin: 2.5em auto;
+    width: 40%;
+    border: 1px solid black;
+    padding: 1.5em;
+}
+textarea{
+    width: 95%;
+    height: 5em;
+}
+input[type="submit"]{
+    display: block;
+    width: 15%;
+    margin: 1em 1em 1em auto;
+}
+div#result{
+    border: 1px solid black;
+    margin: 2.5em auto;
+    width: 40%;
+    padding: 1.5em;
+}

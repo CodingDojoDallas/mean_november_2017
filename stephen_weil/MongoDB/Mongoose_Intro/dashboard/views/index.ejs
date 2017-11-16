@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Foxes!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>All the Cool Foxes</h3>
+        <table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Genus</th>
+                        <th>Species</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (typeof(foxes) != 'undefined') { %>
+                        <% for (var i=0, len=foxes.length; i<len; i++) { %>
+                            <tr>
+                                <td><i><%= foxes[i].genus %></i></td>
+                                <td><i><%= foxes[i].species %></i></td>
+                                <td><a href="/view/<%= foxes[i].species %>">View</a> | <a href="/edit/<%= foxes[i].species %>">Edit</a> | <a href="/delete/<%= foxes[i].species %>">Delete</a></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </table>
+        <a href="/new">Add a New Fox</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+p {
+    text-align: right;
+}
+
+h1 {
+    text-align: right;
+}
+
+p.error {
+    color: red;
+}
+
+ul {
+    list-style-type: none;
+}
+
+div#chatbox {
+    width: 95%;
+    height: 30em;
+    border: 1px solid black;
+    padding: 1.5em;
+    margin-bottom: .5em;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+div#chatbox p {
+    text-align: left;
+}
+
+div#chatbox span.myname {
+    font-weight: bold;
+    color: blue;
+}
+
+div#chatbox span.name {
+    font-weight: bold;
+    color: red;
+}
+
+div.user {
+    width: 95%;
+    border: 1px solid black;
+    height: 3em;
+    padding: .5em;
+}
+
+div.user span.name {
+    font-weight: bold;
+    color: blue;
+}

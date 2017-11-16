@@ -1,0 +1,20 @@
+div.col{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+div.right{
+    float: right;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+p.error{
+    color: red;
+}
+div.row{
+    width: 90%;
+    margin: 1.5em auto;
+    height: 150px;
+}

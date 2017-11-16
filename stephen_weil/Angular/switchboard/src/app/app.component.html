@@ -1,0 +1,5 @@
+<h1>{{ title }}</h1>
+<div *ngFor="let one of array; let idx = index">
+  <div class="switch green" *ngIf="one" (click)="array[idx] = false">On</div>
+  <div class="switch red" *ngIf="!one" (click)="array[idx] = true">Off</div>
+</div>

@@ -1,0 +1,4 @@
+<h1>{{ title }}</h1>
+<div class="container" *ngFor="let color of colors">
+  <div class="colorbox" [ngStyle]="{'background-color': color}"></div>
+</div>

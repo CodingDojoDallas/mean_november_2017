@@ -1,0 +1,8 @@
+<p>
+  Power Level: <span *ngIf="powerlevel !== undefined">{{ powerlevel * 150 }}</span>
+</p>
+<p class="message">
+    <span *ngIf="over9()">"Over 9000!"</span>
+    <span *ngIf="superlative()">"Superlative!"</span>
+    <span *ngIf="theone()">"The One!"</span>
+</p>

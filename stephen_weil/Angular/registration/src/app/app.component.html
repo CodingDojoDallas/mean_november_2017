@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+<div id="success"></div>
+<form #formData='ngForm' (submit)="on_submit()">
+    <p>First Name: <input type="text" name="first" required [(ngModel)]="user.first" #first="ngModel"> <span *ngIf="!first.valid">First name is required.</span></p>
+    <p>Last Name: <input type="text" name="last" required [(ngModel)]="user.last" #last="ngModel"> <span *ngIf="!last.valid">Last name is required.</span></p>
+    <p>Email: <input type="email" name="email" required pattern="^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$" [(ngModel)]="user.email" #email="ngModel"> <span *ngIf="!email.valid">Email must be valid.</span></p>
+    <p>Password: <input type="password" name="password" required minlength='16' [(ngModel)]="user.password" #password="ngModel"> <span *ngIf="!password.valid">Password must be at least 16 characters.</span></p>
+    <p>Confirmation: <input type="password" name="confirmation" required [(ngModel)]="user.confirmation"> <span *ngIf="check_valid()">Password must match confirmation.</span></p>
+    <p>Street Address: <input type="text" name="address" required [(ngModel)]="user.address" #address="ngModel"> <span *ngIf="!address.valid">Address is required.</span></p>
+    <p>Unit/Apt #: <input type="text" name="unit" [(ngModel)]="user.unit" #unit="ngModel"></p>
+    <p>City: <input type="text" name="city" required [(ngModel)]="user.city" #city="ngModel"> <span *ngIf="!city.valid">City is required.</span></p>
+    <p>State: <select name="state" [(ngModel)]="user.state"><option *ngFor="let state of states" value="{{ state }}">{{ state }}</option></select></p>
+    <p>I'm feeling lucky: <input type="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky="ngModel" value="Yes">Yes <input type="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky="ngModel" value="No">No <span *ngIf="!lucky.valid">Choosing how you feel is required.</span></p>
+    <p *ngIf="formData.valid"><input type="submit" value="Register"></p>
+</form>

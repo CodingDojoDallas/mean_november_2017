@@ -1,0 +1,20 @@
+#1:
+outputs 'undefined' - variable declaration gets hoisted, so no error, but assignment does not occur until after console.log is called.
+
+#2:
+outputs 'magnet' - function declaration gets hosited, preventing error, but it re-declares a variable needle as 'magnet' within that functions scope, and then console-logs that variable
+
+#3:
+outputs 'super cool' - the print function is never actually invoked, so it will not modify the value of brendan until called
+
+#4:
+ouputs 'chicken' and then 'half-chicken' - function delcaration is hoisted, but is not invoked until after the first console.log. invoking eat() then changes the value of food and console.logs that new value. Also, the "var food = 'gone'" gets hoisted to the top of the function scope, but is then overwritten to 'half-chicken' before console.log.
+
+#5:
+this will return an error because it attempts to call mean() before that function has been defined. 
+
+#6:
+outputs 'undefined', then 'rock', then 'r&b', then 'disco' - the first var genre = 'disco' gets hoisted, but hasn't actually been assigned when the first console.log is called. When rewind() is called, var genre is hoisted and initializes a new, locally-scoped variable genre. That then gets set to 'rock', logged, set to 'r&b', and logged. Because a new function-scoped variable was declared, this will not change the value of genre from 'disco' outside that function scope.
+
+#7:
+outputs 'san jose', then 'seattle', then 'burbank', then 'san jose' - same explanation as #6, except the first C/L is not undefined, because dojo get's declared before calling it.

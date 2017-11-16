@@ -1,0 +1,7 @@
+div.colorbox {
+    width: 5em;
+    height: 5em;
+}
+div {
+    display: inline-block;
+}

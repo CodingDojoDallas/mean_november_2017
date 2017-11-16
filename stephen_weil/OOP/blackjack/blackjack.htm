@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blackjack</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <link rel="stylesheet" href="blackjack.css">
+    <script src="blackjack.js"></script>
+</head>
+<body>
+    <h1>Play Some Blackjack?</h1>
+    <div id="info">
+        <p id="chips">Chips: 100</p>
+        <p id="bet_amt">Current Bet:</p>
+        <button id="new">New Hand</button>
+        <p id="message"></p>
+    </div>
+    <div id="dealer">
+        <h2>Dealer's Hand</h2>
+        <div class="card" id="d1"></div>
+        <div class="card" id="d2"></div>
+    </div>
+    <div id="player">
+        <h2>Your Hand</h2>
+        <div class="card" id="p1"></div>
+        <div class="card" id="p2"></div>
+    </div>
+    <div id="options">
+        <form id="bet">
+            <input type="number" name="bet">
+            <input type="submit" value="Bet">
+        </form>
+        <div id="actions">
+            <button id="stay">Stay</button>
+            <button id="hit">Hit</button>
+            <button id="double">Double Down</button>
+        </div>
+    </div>
+</body>
+</html>

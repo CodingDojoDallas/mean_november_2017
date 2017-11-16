@@ -1,0 +1,17 @@
+div{
+    display: inline-block;
+}
+div.switch{
+    width: 5em;
+    height: 5em;
+    margin: .25em;
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+}
+div.green{
+    background-color: green;
+}
+div.red{
+    background-color: red;
+}

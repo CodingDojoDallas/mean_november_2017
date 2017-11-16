@@ -1,0 +1,62 @@
+.ng-invalid::before {
+    content: url(images/x.png);
+}
+.ng-valid::before {
+    content: url(images/check.png);
+}
+form {
+    text-align: right;
+    width: 50%;
+}
+form textarea{
+    width: 90%;
+    height: 5em;
+    padding: 0;
+}
+p.error {
+    color: red;
+}
+div.quotes > div {
+    display: inline-block;
+}
+div.quotes{
+    width: 50%;
+    border: 1px solid black;
+    padding: 1em;
+}
+div.text{
+    width: 60%;
+}
+div.votes{
+    width: 5%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+div.buttons{
+    width: 17.5%;
+    text-align: center;
+    margin-left: 3em;
+}
+button.up, button.down, button.delete{
+    width: 98%;
+    border: 1px solid black;
+    color: white;
+    display: block;
+    margin: 1em auto;
+}
+button.up{
+    background-color: green;
+}
+button.down{
+    background-color: red;
+}
+button.delete{
+    background-color: black;
+}
+div.pos{
+    color: green;
+}
+div.neg{
+    color: red;
+}
