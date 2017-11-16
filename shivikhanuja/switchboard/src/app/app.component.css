@@ -1,0 +1,27 @@
+.board{
+	background-color: black;
+	display: inline-block;
+	text-align: center;
+}
+
+.switch {
+	background-color: orange;
+	display: inline-block;
+	margin: 5px;
+}
+
+button {
+	width: 50px;
+	height: 50px;
+	color: white;
+	margin: 20px;
+	background-color: darkgrey;
+	display: inline-block;
+}
+
+.on{
+	background-color: darkgreen;
+}
+.off{
+	background-color: red;
+}

@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+	<h1>{{ title }}</h1>
+</div>
+<div class="board">
+	<div *ngFor="let switch of switches, let idx = index" class="switch">
+		<button (click)="changeVal(idx)" [ngClass]="{ 'on':switch === 'on', 'off':switch === 'off' }" >{{ switch }}</button>
+	</div>
+</div>
+

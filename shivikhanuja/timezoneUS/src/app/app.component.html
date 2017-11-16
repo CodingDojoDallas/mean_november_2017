@@ -1,0 +1,16 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div style="text-align:center">
+  <h4>US TimeZone Display!</h4>
+
+    <button 
+      *ngFor="let timezone of timezones, let idx =index"
+      [ngClass]= "{'selected': buttons[idx]}"
+      (click)="setTimezone(timezone)" 
+    >
+      {{ timezone }}
+
+    </button>
+    <button (click)="clear()">Clear</button>
+  <p>{{ datetime | date:'medium':currentTimezone }}</p>
+
+</div>

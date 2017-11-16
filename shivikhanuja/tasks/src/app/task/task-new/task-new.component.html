@@ -1,0 +1,14 @@
+<form (submit) = "onSubmit()" #taskForm ='ngForm'>
+    <input
+        type="text"
+        name="name"
+        required
+        minlength="4"
+        maxlength="24"
+        [(ngModel)]="task.name"
+        #name='ngModel'
+    />
+    <button type="submit" *ngIf="taskForm.valid">Create Task</button>
+    <button type="submit" disabled *ngIf="! taskForm.valid">Create Task</button>
+
+</form>
