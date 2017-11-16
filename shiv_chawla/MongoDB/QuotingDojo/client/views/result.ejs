@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <title>Quote Result</title>
+</head>
+<body>
+    <h1>THIS IS WHAT YOU SAID</h1>
+    <% for (var x in quotes){ %>
+        <p>You said: <%=  quotes[x].quote %></p>
+        <p>At: <%= quotes[x].createdAt %></p>
+        <p>You are: <%= quotes[x].name %></p>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>MESSAGEBOARD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-faded">
+        <h1 class="navbar-brand mb-0">CODING DOJO MESSAGEBOARD</h1>
+    </nav>
+    <br>
+    <div class="container">
+
+        <form action='/post/message' method='post'>
+            Name: <input type ="text" name="name">
+            Message: <input type="text" name="message">
+            <input type='submit' value='Post Message'>
+        </form>
+        <br>
+        <% for (var x= messages.length - 1; x>=0; x--){ %>
+            <div>
+                <h5><%= messages[x].name %></h5>
+                <p><%= messages[x].message %> </p>
+                <p>posted at: <%= messages[x].createdAt %></p>
+                <div class='container'>
+                    <% for (var comment of messages[x].comments){ %>
+                    <p><%= "Name: " + comment.name %></p>
+                    <p><%= "Comment: " + comment.comment %></p>
+                    <% } %>
+                </div>
+                <form action='/post/comment/<%= messages[x].id %>' method='post'>
+                    Name: <input type ="text" name="name">
+                    Comment: <input type="text" name="comment">
+                    <input type='submit' value='Post Comment'>
+                </form>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

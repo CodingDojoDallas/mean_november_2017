@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+  <button id="play_game">PLAY</button>
+  <button id="reset">RESET</button>
+  <div id='playBox'>
+    <h1 id="playMessage"></h1>
+  </div>
+  <div id="dealer">Dealers hand
+    <h1 id="dealerhand"></h1>
+  </div>
+  <div id="you">Your hand
+    <h1 id="playerhand"></h1>
+  </div>
+  <button id="hit">HIT</button>
+  <button id="stay">STAY</button>
+  <script>
+    //start declaring classes
+    
+    class Card {//this the card class
+      constructor(suit, value) {
+        this.suit = suit;
+        this.value = value;
+      }
+      showCard() {
+        console.log(`[${this.suit},${this.value}]`)
+        return this
+      }
+    }
+
+    class Deck { //deck function
+      constructor() {
+        this.deck = [];
+        this.buildDeck().shuffleDeck();//when a new deck is created, ALWAYS shuffle it and auto-create
+      }
+      buildDeck() {
+        for (var s = 1; s < 5; s++) {
+          var suit = s;
+          if (suit == 1) {
+            suit = "hearts"
+          }
+          else if (suit == 2) {
+            suit = "spades"
+          }
+          else if (suit == 3) {
+            suit = "diamonds"
+          }
+          else {
+            suit = "clubs"
+          }
+          for (var v = 1; v < 14; v++) {
+            var value = v;
+            if (value == 11 || value == 12 || value == 13) { //for BJ only
+                value = 10;
+            }
+            let newCard = new Card(suit, value);
+            this.deck.push(newCard);
+          }
+        }
+        return this;
+      }
+      showDeck() {
+        for (let c = 0; c < this.deck.length; c++) {
+          this.deck[c].showCard();
+        }
+        return this;
+      }
+      shuffleDeck() {
+        var m = this.deck.length,
+          t, i;
+
+        // While there remain elements to shuffle…
+        while (m) {
+
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * m--);
+
+          // And swap it with the current element.
+          t = this.deck[m];
+          this.deck[m] = this.deck[i];
+          this.deck[i] = t;
+        }
+        return this;
+      }
+      dealCard() {
+        return this.deck.pop();
+      }
+      resetDeck() {
+        this.deck.splice(0, this.deck.length);
+        this.buildDeck();
+        return this;
+      }
+    }
+
+    class Player {//create the player
+      constructor(name) {
+        this.name = name;
+        this.hand = [];
+      }
+      draw(deck) {
+        this.hand.push(deck.dealCard());
+        return this;
+      }
+      discard() {
+        this.hand.pop();
+        return this
+      }
+      showHand() {
+        let hand = "";
+        for (let c = 0; c < this.hand.length; c++) {
+          this.hand[c].showCard();
+          hand += this.hand[c].suit;
+          hand += this.hand[c].value;
+        }
+        return hand;
+      }
+      HandCount() {
+        var playerCount = 0;//how to loop this shit?
+        var aceCount = 0;
+        for (let i = 0; i < this.hand.length; i++) {
+          if (this.hand[i].value == 1) {
+            aceCount += 1;
+            playerCount += 11;
+          }
+          else if (this.hand[i].value > 10) {
+            playerCount += 10
+          }
+          else {
+            playerCount += this.hand[i].value;
+          }
+        }
+        return playerCount;
+      }
+
+    }
+    //this is the class of BJgame
+    class BJGame {
+      constructor(player, dealer) {
+        this.player = player;
+        this.dealer = dealer;
+        this.deck = new Deck();
+        this.deck.resetDeck().shuffleDeck().showDeck();//reset the deck each time a game is created
+      }
+      dealerDraw() {
+        this.dealer.draw(this.deck);
+        return this;
+      }
+      playerDraw() {
+        this.player.draw(this.deck);
+
+        return this;
+      }
+    }
+    //event handler to start the game which kicks off the "play " function
+    var play_game = document.getElementById("play_game");
+    play_game.addEventListener("click", play);
+
+    //start the game
+    function play() {
+
+      //first function which SHOWS the hand on the screen
+      function show() {
+        let dealerHand = document.getElementById('dealerhand');//update innerhtml instead of create shit     
+          dealerHand.innerHTML = dealer.showHand();
+        let playerHand = document.getElementById('playerhand');
+          playerHand.innerHTML = player.showHand();
+      }
+
+      //Creates the players
+      var player = new Player("shiv");
+      var dealer = new Player('Dealer');
+
+      //create the game
+      cheese = new BJGame(player, dealer);
+
+      //set hands for the players and do an initial count
+      cheese.dealerDraw().playerDraw().playerDraw();
+      var pGameHand = player.HandCount();
+      var dGameHand = dealer.HandCount();
+
+      //starts the game function
+      game();
+
+      function game(){
+
+        //game starts by SHOWING you the cards
+        show();
+
+        //establish the hit button and function which draws a card and shows it
+        var hit = document.getElementById('hit');
+        hit.addEventListener("click", function hit() {
+          cheese.playerDraw();
+          show();
+        });
+
+        //establish the stay button which will eventually call game logic
+        var stay = document.getElementById('stay');
+        var stay_game; //tracking if you ever press "stay"
+        stay.addEventListener("click", function stay() {
+        
+          //counts the players= and dealer cards
+          var pGameHand = player.HandCount();
+          var dGameHand = dealer.HandCount();
+
+          //this is the logic for the dealer to hit or not. Can expand on this
+          while (dGameHand < 17){
+            cheese.dealerDraw();
+            show();
+            dGameHand = dealer.HandCount();
+          }
+
+          //sets stay game to true which kicks off the game logic
+          var stay_game = true;
+
+          //run game logic
+          if (stay_game == true ){
+            let playMessage = document.getElementById('playMessage');
+            playMessage.innerHTML = "you win";
+            if(pGameHand == 21){
+              playMessage.innerHTML = "you win bj";
+            }
+            if(dGameHand == pGameHand){
+              playMessage.innerHTML = "PUSH";
+            }
+            if(dGameHand == 21){
+              playMessage.innerHTML = "you lose dealer bj";
+            }
+            if(pGameHand > 21){
+              playMessage.innerHTML = "you bust";
+            }
+            if(pGameHand < dGameHand && dGameHand < 21){
+              playMessage.innerHTML = "you lost";
+            }
+            if(pGameHand > dGameHand && pGameHand < 21){
+              playMessage.innerHTML = "you beat the dealer";
+            } 
+          }
+        });
+
+        //reset button to start shit over again
+        var reset = document.getElementById("reset");
+        reset.addEventListener("click", function(){location.reload()});
+
+      }
+    }
+      
+      
+
+
+
+
+
+    /* var deck1 = new Deck();
+    
+    console.log("deck built");
+    deck1.showDeck();
+    
+    console.log("WE SHUFFLIN")
+    deck1.shuffleDeck().showDeck();
+    
+    console.log("SHIV ENTERS THE GAME")
+    var shiv = new Player('Shiv');
+    console.log("SHIV'S HAND");
+    shiv.draw(deck1).draw(deck1).draw(deck1).showHand();
+    console.log("SHIV DISCARDED");
+    shiv.discard().showHand(); */
+
+  </script>
+</body>
+
+</html>

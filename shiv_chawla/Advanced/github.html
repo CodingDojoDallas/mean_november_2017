@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        </head>
+    <body>
+        <button id="get">GET SOME SHIT</button>
+        <button id="github">SHOW SOME SHIT</button>
+        <div id="who">WHO AM I</div>
+
+        <script>
+            var getbutton = document.getElementById("get");
+            var showbutton = document.getElementById("github");
+            //create button
+            //add event handler on page
+            //on event handler, say run a function
+            //that function should go get shit from github API
+            //take the shit that you return in the RES from the API call into a variable
+            //parse that variable
+            //console.log the shit that you have
+            //use js templating bullshit to pass the name up
+            getbutton.addEventListener("click",getname);
+            var githubres;
+            function getname(){
+                $.get("https://api.github.com/users/shivrajchawla", function(res){
+                    console.log(res);
+                    githubres = res;
+                },"json");
+            }
+            showbutton.addEventListener("click",displayname);
+            function displayname(){
+                let name = document.createElement('h1');
+                name.innerHTML = githubres.login;
+                document.getElementById('who').appendChild(name);
+            }
+        </script>
+    </body>
+</html>

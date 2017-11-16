@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit Animal</title>
+</head>
+<body>
+    <h1>WHO YOU ARE</h1>
+    <p>Your Name: <%= animal[0].name %></p>
+    <p>Color: <%= animal[0].color %></p>
+    <p>Created At: <%= animal[0].createdAt %></p>
+    <p>Updated At: <%= animal[0].updatedAt %></p>
+    <form action='/animals/<%= animal[0].id %>' method="post">
+        <input type='text' name='name' value='<%= animal[0].name %>'>
+        <input type='text' name='color' value='<%= animal[0].color %>'> 
+        <input type='submit' value="CHANGE THIS ANIMAL">
+    </form>
+   
+</body>
+</html>
