@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Litter</title>
+</head>
+<body>
+    <% for (let i = 0; i < litter.length; i++) { %>
+        <p><a href='/litter/show/<%= litter[i].id %>'><%= litter[i].name %></a> - <%= litter[i].color %> - <%= litter[i].gender %></p>
+    <% } %>
+</body>
+</html>

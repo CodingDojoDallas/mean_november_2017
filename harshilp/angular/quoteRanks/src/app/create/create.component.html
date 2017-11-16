@@ -1,0 +1,25 @@
+<h1>Add a new Quote:</h1>
+<form (submit)='submit()' #formData = ngForm>
+<textarea
+  name='content'
+  minlength='5'
+  required
+  placeholder='Quote content here..'
+  [(ngModel)] = 'addQuote.content'
+  #content = 'ngModel'
+></textarea>
+<input
+  name='author'
+  type='text'
+  required
+  placeholder='Author'
+  minlength = '2'
+  [(ngModel)] = 'addQuote.author'
+  #author = 'ngModel'
+>
+<button type='submit' [disabled]='!formData.valid'>Add</button>
+</form>
+<div>
+  <p *ngIf='!content.valid' class='error'>Quote content is required and must be greater than 5 characters.</p>
+  <p *ngIf='!author.valid' class='error'>Quote author is required and must be greater than 2 characters.</p>
+</div>

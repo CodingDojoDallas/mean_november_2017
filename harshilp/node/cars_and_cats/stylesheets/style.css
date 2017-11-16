@@ -1,0 +1,11 @@
+*{
+    margin:0px;
+    padding:0px;
+    color:red;
+}
+img{
+    height:500px;
+    width:auto;
+    display: block;
+    margin:auto;
+}

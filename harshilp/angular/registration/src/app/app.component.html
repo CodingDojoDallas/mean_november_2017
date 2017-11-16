@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration</title>
+</head>
+<body>
+  <h1 class={{success}} *ngIf='users.length>0'>Successfully registered. {{users[users.length-1].email}}</h1>
+  <form (submit) = 'submit()' #formData='ngForm'>
+    <input
+      type='text'
+      name='first_name'
+      placeholder='First name'
+      required
+      minlength = '2'
+      [(ngModel)]='user.first_name'
+      #first_name='ngModel'
+    >
+    <input
+      type='text'
+      name='last_name'
+      placeholder='Last name'    
+      required
+      minlength = '2'
+      [(ngModel)]="user.last_name"
+      #last_name='ngModel'
+    >
+    <input
+      type='email'
+      name='email'
+      placeholder='Email'    
+      required
+      minlength = '6'
+      [(ngModel)]='user.email'
+      #email='ngModel'
+    >
+    <input
+      type='password'
+      name='password'
+      placeholder='Password'    
+      required
+      minlength = '7'
+      [(ngModel)]='user.password'
+      #password='ngModel'
+    >
+    <input
+      type='password'
+      name='cpassword'
+      placeholder='Password confirmation'    
+      required
+      minlength = '7'
+      [(ngModel)]='user.cpassword'
+      #cpassword='ngModel'
+    >
+    <input
+      type='text'
+      name='address'
+      placeholder='Address'    
+      required
+      minlength = '6'
+      [(ngModel)]='user.address'
+      #address='ngModel'
+    >
+    <input
+      type='text'
+      name='city'
+      placeholder='City'    
+      required
+      minlength = '2'
+      [(ngModel)]='user.city'
+      #city='ngModel'
+    >
+    <input
+      type='text'
+      name='state'
+      placeholder='State'    
+      required
+      minlength = '2'
+      [(ngModel)]='user.state'
+      #state='ngModel'
+    >
+    <input
+      type='text'
+      name='country'
+      placeholder='Country'    
+      required
+      minlength = '2'
+      [(ngModel)]='user.country'
+      #country='ngModel'
+    >
+    <div *ngIf='formData.valid'>
+    <input type='submit'>
+    </div>
+  </form>
+  <div id='errors'>
+    <div class='error' *ngIf='!first_name.valid && !first_name.pristine'>- First name required and must be more than 2 characters.</div>  
+    <div class='error' *ngIf='!last_name.valid'>- Last name required and must be more than 2 characters.</div>    
+    <div class='error' *ngIf='!email.valid'>- Email required and must be more than 6 characters.</div>    
+    <div class='error' *ngIf='!password.valid'>- Password required and must be more than 7 characters.</div>    
+    <div class='error' *ngIf='!cpassword.valid || !(cpassword.value === password.value)'>- Password confirmation required and must match password.</div>
+    <div class='error' *ngIf='!address.valid'>- Address required and must be more than 6 characters.</div>    
+    <div class='error' *ngIf='!city.valid'>- City required and must be more than 2 characters.</div>    
+    <div class='error' *ngIf='!state.valid'>- State required and must be more than 2 characters.</div>    
+    <div class='error' *ngIf='!country.valid'>- Country required and must be more than 2 characters.</div>    
+  </div>
+  <div id='registered'>
+    <h3>Registered:</h3>
+    <p *ngFor='let u of users'>{{u.email}}</p>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+div{
+    display:inline-block;
+}
+button{
+    height:70px;
+    width:70px;
+    background-color:green;
+}
+button.off{
+    background-color:red;
+}

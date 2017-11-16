@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kitten</title>
+</head>
+<body>
+    <h1><%= kitten[0].name %></h1>
+    <p><%= kitten[0].gender %>, <%= kitten[0].color %></p>
+    <a href='/litter/edit/<%= kitten[0].id %>'>Edit</a>
+    <a href='/litter/destroy/<%= kitten[0].id %>'>Murder</a>
+    <a href='/'>Go back</a>    
+</body>
+</html>
