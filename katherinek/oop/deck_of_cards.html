@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script>
+class Deck {
+  constructor(name){
+    this.name = name
+    this.cards = this.populate()
+    }
+  
+  populate(){
+    var cards = []
+    var suits = [ "hearts", "clubs", "diamonds", "spades"]
+    var faces = [1, 2, 3, 4, 5, 6, 7, 8, 9,"j","q","k","a"]
+    for (var i = 0; i < suits.length; i++){
+      for (var a = 0; a < faces.length; a++){
+        var card = new Card(suits[i], faces[a]);
+        cards.push(card);
+      }  
+    }
+    return cards
+  }
+  
+  reset(){
+    this.cards = this.populate()
+    return this
+  }
+  
+  shuffleDeck(){
+    for (var i = 0; i < 52; i++){
+      var rand = Math.floor(Math.random()*52)
+      var temp = this.cards[i]
+      this.cards[i] = this.cards[rand]
+      this.cards[rand] = temp
+    }
+    return this.cards
+  }
+  
+  deal(num){
+    var hand = []
+    for (var i = 0; i < num; i++){
+      hand.push(this.cards.splice(i, 1)[0])
+    }
+    return hand
+  }
+  
+}
+
+
+class Card {
+    constructor(suit, face){
+      this.suit = suit
+      this.face = face
+    }  
+    display(){
+      console.log(this.face + ", " + this.suit )
+    }
+}
+
+class Player {
+  constructor(name){
+    this.name = name
+    this.hand = []
+  }
+  
+  draw(num, deck){
+    this.hand = deck.deal(num)
+    return this.hand
+  }
+  
+  discard(num, deck){
+    for (var i = 0; i < num; i++){
+      deck.cards.push(this.hand.pop())
+    }
+    return this.hand
+  }
+}
+
+
+  
+  robbies_deck = new Deck("robbies_deck")
+  console.log(robbies_deck.cards)
+  console.log(robbies_deck.cards.length)
+  
+  console.log(robbies_deck.shuffleDeck())
+  
+  console.log(robbies_deck.deal(5))
+  console.log(robbies_deck.cards.length)
+  
+  robbie = new Player("Robbie")
+  console.log(robbie.draw(2, robbies_deck))
+  console.log(robbie.discard(1, robbies_deck))
+
+</script>
+</body>
+</html>

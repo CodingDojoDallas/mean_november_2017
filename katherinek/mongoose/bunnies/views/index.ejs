@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bunnies</title>
+</head>
+<body>
+
+<p> Bunnies and Posts | <a href="/">All Bunnies</a> | <a href="/bunny/new">Add Bunny</a> | <a href="/posts">All Posts</a> | <a href="/addpost">Add Post</a> </p>
+
+
+<p><a href="/bunny/new">Add a Bunny</a></p>
+
+<h2> Bunnies </h2>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Breed</th>
+			<th>Colour</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for (var i = 0; i < bunnies.length; i++) { %>
+		<tr>
+			<td><a href="/bunny/<%= bunnies[i].id %>"><%= bunnies[i].name %></a></td>
+			<td><%= bunnies[i].age %></td>
+			<td><%= bunnies[i].breed %></td>
+			<td><%= bunnies[i].color %></td>
+		</tr>
+		<% } %>
+	</tbody>
+</table>	
+
+
+</body>
+</html>

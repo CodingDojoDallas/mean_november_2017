@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script>
+
+class Unicorn {
+  constructor(name){
+    this.name = name
+    this.health = 1000
+    var speed = 50
+    var powers = 50
+  }
+  
+  heal(friend){
+    this.health -= 100
+    this.powers -= 1
+    friend.health = 1000
+    return friend.health
+  }
+  
+  defend_against(foe){
+    this.powers -= 10
+  }
+  
+  weaken(amt){
+    this.health -= amt
+    return this.health
+  }
+  
+}
+
+var amalthea = new Unicorn("Amalthea")
+
+console.log(amalthea.weaken(20))
+
+var liir = new Unicorn("Liir")
+
+console.log(liir.heal(amalthea))
+
+</script>
+</body>
+</html>

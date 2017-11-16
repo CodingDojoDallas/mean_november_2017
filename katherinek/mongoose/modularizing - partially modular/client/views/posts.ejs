@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Posts</title>
+</head>
+<body>
+<p> Bunnies and Posts | <a href="/">All Bunnies</a> | <a href="/bunny/new">Add Bunny</a> | <a href="/posts">All Posts</a> | <a href="/addpost">Add Post</a> </p>
+
+<h2> All Posts </h2>
+
+<ul>
+<% if (posts) { %>
+<% for (var i=0; i< posts.length; i++) { %>
+<li><a href="/posts/<%= posts[i].id %>"><%= posts[i].text %></a></li>
+<% } %>
+<% } %>
+</ul>
+
+</body>
+</html>

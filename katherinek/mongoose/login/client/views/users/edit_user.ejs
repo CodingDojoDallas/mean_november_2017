@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partials/head %>
+</head>
+<body>
+
+
+<% include ../partials/header %>
+
+<h3>Edit User</h3>
+
+<% if (user) {%>	
+<form action="/update/<%= user._id %>" method="post">
+	<p><input type="text" name="firstname" value="<%= user.firstname %>"></p>
+	<p><input type="text" name="lastname" value="<%= user.lastname %>"></p>
+	<p><input type="text" name="email" value="<%= user.email %>"></p>
+	<p><input type="submit" value="Save Changes">
+</form>
+<% } %>
+
+<form action="/delete/<%= user._id %>" method="post">
+<input type="hidden" name="id" value="<%= user._id %>">
+<input type="submit" value="Delete User">
+</form>
+
+<% include ../partials/footer %>
+</body>
+</html>

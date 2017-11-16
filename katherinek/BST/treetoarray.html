@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	
+// ---------------- To see this in action - visit: https://repl.it/NaDl/104	
+
+// Build a binary tree	
+
+// first we need a start node - or leaf
+
+function Leaf(val, prev) {
+  this.value = val;
+  this.left = null;
+  this.right = null;
+  this.prev = prev;
+}
+
+// then we need a BinarySearchTree object
+
+function BinarySearchTree() {
+  this.root = null;
+}
+
+BinarySearchTree.prototype.add = function(val) {
+  var root = this.root;
+  var runner = root;
+  if (!root) {
+    this.root = new Leaf(val, null);
+    console.log(this.root.value)
+    return;
+  }
+
+  if (runner.value === val) {
+    console.log('value already in tree');
+    return;
+  }
+
+  while (runner) {
+    if (val < runner.value) {
+      if (!runner.left) {
+        runner.left = new Leaf(val, runner);
+        console.log(runner.left.value)
+        break;
+      } else {
+        runner = runner.left;
+      }
+    } else {
+      if (!runner.right) {
+        runner.right = new Leaf(val, runner);
+        console.log(runner.right.value)
+        break;
+      } else {
+        runner = runner.right;
+      }
+    }
+  }
+}
+
+// then we need a function to pass an array and produce a tree
+
+function growBinaryTree(list) {
+  var bst = new BinarySearchTree();
+  for (var i = 0; i < list.length; i++) {
+    bst.add(list[i]);
+  }
+  return bst;
+}
+
+// lets call the function and pass our array!
+
+var list = [12, 34, 8, 6, 23, 90, 9, 97, 18, 1, 3, 5, 7];
+var start = 10
+
+var newTree = growBinaryTree(list);
+console.log(newTree);
+
+// Now we can do cool things to our BST
+
+function treeToArray(leaf, runner=leaf){
+  if (leaf){
+    if(runner.left){
+      var left = treeToArray(leaf, runner.left)
+    }
+    if (runner.right){
+      var right = treeToArray(leaf, runner.right)
+    }
+    var arr = [left, runner.value, right]
+    return flatten(arr)
+  }
+  return "empty"
+}  
+  
+ 
+ // refactored
+  
+
+var flattened = treeToArray(newTree.root)
+console.log(flattened)
+
+
+
+
+// Flatten works perfectly
+test = [[1, 2, [3], 4, [5,[6]]], 7]
+console.log(flatten(test))
+
+// flatten function, for getting rid of those pesky array brackets
+function flatten(arr, flat=[]) {
+  if (arr < 1) {
+    return "too short"
+  }
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] === undefined){
+      continue;
+    }
+    if (Array.isArray(arr[i])){
+      flatten(arr[i], flat)
+    }
+    else {
+      flat.push(arr[i])
+    }
+  }
+  return flat
+}
+
+
+
+	
+</script>	
+
+</body>
+</html>

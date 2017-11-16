@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post</title>
+</head>
+<body>
+
+<p> Bunnies and Posts | <a href="/">All Bunnies</a> | <a href="/bunny/new">Add Bunny</a> | <a href="/posts">All Posts</a> | <a href="/posts/new">Add Post</a> </p>	
+
+<h2>A Post</h2>
+
+<% if (post) { %>
+<h3><%= post.text %></h3>
+
+<form action="/comments" method="post">
+<input type="hidden" name="id" value="<%= post._id %>">
+<p>Add a comment: <input type="text" name="text"> <input type="submit" value="Add"></p>
+</form>	
+
+<% if (post.comments) { %>
+<% for (var i=0; i< post.comments.length; i++) { %>
+<p>Comment: <%= post.comments[i].text %></p>	
+<% } %>
+
+<% } %>
+<% } %>
+
+</body>
+</html>

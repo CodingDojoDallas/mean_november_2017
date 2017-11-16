@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Bunny</title>
+</head>
+<body>
+<p> Bunnies and Posts | <a href="/">All Bunnies</a> | <a href="/bunny/new">Add Bunny</a> | <a href="/posts">All Posts</a> | <a href="/addpost">Add Post</a> </p>
+	
+<h2> Edit this Bunny</h2>
+
+<form action="/bunny/<%= bunny.id %>" method="post">
+<p>Name: <input type="text" name="name" value="<%= bunny.name %>"></p>
+<p>Age: <input type="integer" name="age" value="<%= bunny.age %>"></p>
+<p>Breed: <input type="integer" name="breed" value="<%= bunny.breed %>"></p>
+<p>Color: <input type="integer" name="color" value="<%= bunny.color %>"></p>
+<input type="submit" value="Edit">
+</form>
+
+</body>
+</html>

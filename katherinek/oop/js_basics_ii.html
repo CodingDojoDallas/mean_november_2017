@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Basics II</title>
+</head>
+<body>
+<script>
+
+function magic_multiply(x, y){
+	if (x == 0 && y == 0){
+		console.log("All inputs zero")
+	}
+	if (x.constructor === Array){
+		for (var i = 0; i < x.length; i++){
+			x[i] = x[i] * y
+		}
+		console.log(x)
+	}			
+	if (y.constructor === Array){
+		for (var i = 0; i < y.length; i++){
+			y[i] = y[i] * x
+		}	
+		console.log(x)
+	}	
+	if (typeof y === String ){
+		console.log("Cannot multiply by a string")
+	}
+	if (typeof x === String && typeof y == "Number" ){
+		for (var i = 0; i < y; i++) {
+			console.log(x)
+		}
+	}
+	else {
+	console.log(x * y)
+	}	
+}
+
+console.log(magic_multiply([1,2,3], 110))
+
+</script>
+</body>
+</html>
