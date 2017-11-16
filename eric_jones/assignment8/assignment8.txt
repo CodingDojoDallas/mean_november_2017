@@ -1,0 +1,17 @@
+1) world
+
+2) magnet
+
+3) super cool
+
+4) chicken
+   half-chicken
+
+5) Error: mean is not a defined function
+
+6) undefined
+   rock
+   r&b
+   disco
+
+7) Error: dojo is not declared
