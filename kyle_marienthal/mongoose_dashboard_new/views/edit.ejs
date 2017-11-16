@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>Edit Bat</title>
+     </head>
+     <body>
+       <h1>Edit this Bat</h1>
+          <form action="/bats/<%= bat._id %>"  method="post">
+            <label>Name: </label>
+            <input type="text" name="name" value="<%= bat.name %>">
+            <p></p>
+            <label>Weight: </label>
+            <input type="text" name="weight" value="<%= bat.weight %>">
+            <p></p>
+            <label>Color: </label>
+            <input type="text" name="color" value="<%= bat.color %>">
+            <p></p>
+            <input type="submit" value="Update Bat" >
+            
+            <a href="/"><button type="button" name="button">See all Bats</button></a>
+
+          </form>
+          <p></p>
+     </body>
+</html>

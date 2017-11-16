@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function Ninja(name, health){
+        var self = this;
+        // public attributes
+        self.name = name;
+        self.health = 100;
+        // private attributes
+        var speed = 3;
+        var strength = 3;
+      // public methods
+        Ninja.prototype.sayName = function(){
+          console.log(`My ninja name is ${this.name}`);
+        }
+        Ninja.prototype.showStats = function(){
+          console.log(`Strength: ${strength}, Speed: ${speed}, Health: ${this.health}`);
+        }
+        Ninja.prototype.drinkSake = function(){
+          this.health += 10;
+          return this;
+        }
+        Ninja.prototype.kick = function (ninja) {
+          if(ninja instanceof Ninja){
+          const lost = 15 * strength;
+          ninja.health -= lost;
+          console.log(`${ninja.name} was kicked by ${this.name}, and lost ${lost} Health!`);
+          }
+          else{
+            console.log("not a ninja");
+          }
+        };
+      }
+      Ninja.prototype.punch = function (ninja) {
+        if(ninja instanceof Ninja){
+        ninja.health -= 10;
+        console.log(`${ninja.name} was punched by ${this.name}`);
+      }
+      else{
+        console.log("not a ninja");
+      }
+      };
+      one = new Ninja("Kyle");
+      two = new Ninja("Joy");
+        // this.whatever makes it a public method(but change this to self by doing var self = this;)
+        // var.whatever makes it a private method
+    </script>
+<!-- 
+    Assignment: Ninja Class
+    Create a new class called Ninja with the following attributes:
+
+    name
+    health
+    speed (private)
+    strength (private)
+    Speed and strength should be 3 by default. Health should be 100 by default.
+
+    The Ninja class should have the following methods:
+
+    sayName() - This should log that Ninja's name to the console.
+    showStats() - This should show the Ninja's Strength and Speed, as well as their health.
+    drinkSake() - This should add +10 Health to the Ninja
+    Example Outputs
+    var ninja1 = new Ninja("Hyabusa");
+    ninja1.sayName();
+    // -> "My ninja name is Hyabusa!"
+    ninja1.showStats();
+    // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3" -->
+
+    <!-- Assignment: Ninja Class II
+Complete the below challenges using the Ninja Class from the previous assignment.
+
+.punch()
+Add a new method to your Ninja class called .punch(). This method will take another Ninja instance and subtract 5 Health from the Ninja we passed in. Your .punch() should display a console message like the below example.
+
+var blue_ninja = new Ninja("Goemon");
+var red_ninja = new Ninja("Bill Gates");
+red_ninja.punch(blue_ninja);
+// -> "Goemon was punched by Bill Gates and lost 5 Health!"
+Copy
+.kick()
+Now add a method to your Ninja class called .kick(). Kick will subtract 15 Health for each point of Strength the calling Ninja has, and like .punch() will take another Ninja instance.
+
+blue_ninja.kick(red_ninja);
+// -> "Bill Gates was kicked by Goemon and lost 15 Health!"
+Copy
+Validations
+Update .punch() and .kick() so that they only accept Instances of the Ninja class. Hint: You will need to find a way to check the constructor of an instance. You will often need to consult outside documentation to find solutions for particular features. -->
+  </body>
+</html>
