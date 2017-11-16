@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="home.css">
+		<meta charset="utf-8">
+		<title>User Index Page</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Users Index</h1>
+			<div class="main">
+				<h2>Users:</h2>
+				<% for (var x in users) {%>
+					<h3>Name: <%= users[x].name %></h3>
+					<h3>Email: <%= users[x].email %></h3>
+					<hr>
+				<%}%>
+
+			</div>
+		</div>
+	</body>
+</html>

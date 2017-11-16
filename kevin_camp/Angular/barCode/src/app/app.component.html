@@ -1,0 +1,10 @@
+<div class="container">
+	<h1>Bar Code</h1>
+	<div class="main">
+		<h2>Colors</h2>
+		<div
+			*ngFor='let color of colorArray'
+			[ngStyle]="{'height': '75px', 'width': '75px', 'background-color':color, 'display': 'inline-block'}">
+		</div>
+	</div>
+</div>

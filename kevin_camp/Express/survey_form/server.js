@@ -28,12 +28,11 @@ app.post('/result', function(request, response){
 		language: request.body.language,
 		comment: request.body.comment
 	};
+	response.render('results', {user: user})
+});
 
 app.post('/reset',function(request,response){
 	response.redirect('/')
-});
-
-	response.render('results', {user: user})
 });
 
 app.listen(8000, function(request, response){
