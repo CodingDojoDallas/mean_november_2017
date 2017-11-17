@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<form (submit)= "onSubmit()">  <!--submit is buildin with form the second one is what we name it-->
+  <input type="text" name="FirstName" 
+  [(ngModel)] ='user.FirstName' >
+  <input type="text" name="LastName"
+  [(ngModel)] ='user.LastName' >
+  <input type="submit" value="Submit">
+</form>
+
+{{ user | json }}

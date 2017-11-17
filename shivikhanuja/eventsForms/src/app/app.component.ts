@@ -6,16 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  num: number = 1;
-
-
-  logNum() {
-    console.log('num is: ', this.num);
+  users = [];
+  user = {
+    FirstName: '',
+    LastName: ''
   }
-  increaseNum() {
-    this.num = this.num + 1;
+
+
+  onSubmit(){
+    console.log("onSubmit()");
+    console.log(this.user);
+    // API (this.user)
+    // this.users.push(this.user);
   }
 }
-
-
-
