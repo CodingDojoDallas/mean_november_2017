@@ -49,3 +49,5 @@ Full Mean Part II - https://youtu.be/n5xQ-A1Ix3o <br>
 ## Demos:
 Power Levels - https://youtu.be/xxK0x8HssF4 <br>
 Anonymous Notes: Angular - https://youtu.be/C3ngVeWUuh4 <br>
+Anonymous Note: Node - https://youtu.be/IKNrxZc30sg <br>
+Anonymous Note: Extended Cut (Director's Commentary) - https://youtu.be/MaJDar3O0Ew <br>
