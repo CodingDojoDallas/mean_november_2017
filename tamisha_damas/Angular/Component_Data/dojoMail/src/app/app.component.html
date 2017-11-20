@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:left">
+  <h1>
+    {{title}}!
+  </h1>
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+    </tr>
+    <tbody>
+      <tr *ngFor = 'let user of users'>
+
+      <td>{{ user.email }}</td>
+      <td>
+        <span *ngIf = '!user.importance'>Low</span>
+        <span *ngIf = 'user.importance'>High</span>
+      </td>
+      <td>{{ user.subject }}</td>
+      <td>{{ user.content }}</td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <span [ngStyle]="{
+  'background-color': color,
+  'font-weight': 'bold'
+}" >ngStyle</span>
+
+<span class='red'>Styling</span>
+  <h1>
+    Welcome to {{name | json | uppercase }}!
+  </h1>
+  <p>You have a new friend: {{ user.firstName | json }} {{ user.lastName }}</p>
+  {{ num }}
+  <br>
+  {{ 5 + 5 | currency }}
+  <br>
+  {{ num + 5 }}
+  <br>
+  <h5 *ngIf='loggedIn'> You're logged in as Goku </h5>
+  <h5 *ngIf='!loggedIn'> Please log in. </h5>
+  <br>
+  <input [value]='num'>
+  <input value='num'>
+  <br>
+  <h5 *ngFor='let number of [2,4,6,8]; let idx = index'>
+	{{ number }}
+  </h5>
+  <br>
+  <h5 *ngFor='let number of numbers'>
+	{{ number }}
+  </h5>
+  <span [ngClass]="{ 'red': true, 'bold': false }">I should be red but not bolded.</span>
+
+  <span [ngClass]="{'red': true, 'bold': true }">I should be red and bolded.</span>
+
+  <button (click)='logNum()'>Log the num value</button>
+  <button (click)='num = num + 1'>Increment num</button>
+</div>

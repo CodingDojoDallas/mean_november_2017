@@ -1,0 +1,56 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+
+  <form (submit)="onSubmit()">
+    <input
+      type="text"
+      name="email"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="user.email"
+      #email='ngModel'
+    />
+    <input
+      type="text"
+      name="first_name"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="user.first_name"
+      #first_name='ngModel'
+    />
+    <input
+      type="text"
+      name="last_name"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="user.last_name"
+      #last_name='ngModel'
+    />
+    <input
+      type="text"
+      name="password"
+      required
+      minlength="10"
+      maxlength="24"
+      pattern="^([a-zA-Z0-9@*#]{8,15})$"
+      [(ngModel)]="user.password"
+      #password='ngModel'
+    />
+    <input type="submit">
+  </form>
+  {{ user | json }}
+
+  <p *ngFor='let user of users'>
+    {{ user.first_name }}
+    {{ user.last_name }}
+    {{ user.email }}
+    {{ user.password }}
+  </p>
+
+</div>

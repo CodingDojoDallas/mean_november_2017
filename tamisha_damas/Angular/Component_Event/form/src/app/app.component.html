@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+  {{title}}
+  </h1>
+  <!-- We are adding an event to the form upon submission (submit) = to a function we want to invoke-->
+  <!-- By passing $event into "onSubmit($event) I am preventing the form from submitting -->
+  <form (submit)="onSubmit()">
+    <!-- name value must match ngModel.value -->
+    <input type="text" name="firstName" [(ngModel)]="user.firstName">
+    <input type="text" name="lastName" [(ngModel)]="user.lastName">
+    <input type="submit">
+  </form>
+  {{ user | json}}
+<!-- Use a structural directive *ngFor tag to loop through users to render first and last name -->
+  <p *ngFor='let user of users'>
+    {{ user.firstName }} {{ user.lastName }}
+  </p>
+</div>

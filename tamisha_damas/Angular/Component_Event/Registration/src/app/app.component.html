@@ -1,0 +1,141 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+
+  <div *ngIf="submitted">
+    <p>Thank you for registering with us {{ lastUser.firstName }}. We just sent you a confirmation email at {{ lastUser.email }}, and we will send all mail to your address.</p>
+    <br>
+    <p>Have a wonderful day.</p>
+  </div>
+  <div class="account_info">
+    <h4>Account Information</h4>
+
+    <form (submit) = "onSubmit()" #registerForm='ngForm'>
+
+      <label>First Name:</label>
+      <input
+      type="text"
+      name="firstName"
+      required
+      [(ngModel)] = "user.firstName"
+      #firstName = "ngModel"
+      >
+      {{ firstName.errors | json }}
+
+      <br>
+      <label>Last Name:</label>
+      <input
+      type="text"
+      name="lastName"
+      required
+      [(ngModel)] = "user.lastName"
+      #lastName = "ngModel"
+      >
+      {{ lastName.errors | json }}
+
+      <br>
+      <label>Email:</label>
+      <input
+      type="email"
+      name="email"
+      required
+      [(ngModel)] = "user.email"
+      #email = "ngModel"
+      >
+      {{ email.errors | json }}
+
+      <br>
+      <label>Password:</label>
+      <input
+      type="password"
+      name="password"
+      required
+      minlength = "16"
+      pattern="^([a-zA-9@*#]{4,16})$"
+      [(ngModel)] = "user.password"
+      #password = "ngModel"
+      >
+      {{ password.errors | json }}
+
+      <br>
+      <label> Password Confirmation:</label>
+      <input
+      type="password"
+      name="password_con"
+      required validateEqual = "password"
+      [(ngModel)] = "user.password_con"
+      #password_con = "ngModel"
+      >
+      {{ password_con.errors | json }}
+
+      <br>
+      <label>Street Address:</label>
+      <input
+      type="text"
+      name="address"
+      required
+      [(ngModel)] = "user.address"
+      #address = "ngModel"
+      >
+      {{ address.errors | json }}
+
+      <br>
+      <label>Unit/Apt #:</label>
+      <input
+      type="text"
+      name="unit"
+      [(ngModel)] = "user.unit"
+      #unit = "ngModel"
+      >
+
+
+      <br>
+      <label>City:</label>
+      <input
+      type="text"
+      name="city"
+      required
+      [(ngModel)] = "user.city"
+      #city = "ngModel"
+      >
+      {{ city.errors | json }}
+
+      <br>
+      <label>State:</label>
+      <input
+      type="text"
+      name="state"
+      [(ngModel)] = "user.state"
+      #state = "ngModel"
+      >
+      {{ state.errors | json }}
+
+      <br>
+      <label>I'm feeling lucky:</label>
+
+      <input
+      type="radio"
+      name="yes"
+      required
+      >Yes
+
+      <input
+      type="radio"
+      name="no"
+      required
+      >No
+      <br>
+      <button type="submit" name="register" [disabled]="!registerForm.valid">Register</button>
+    </form>
+
+    <p *ngFor='let user of users'>
+      {{ user.firstName }}
+      {{ user.lastName }}
+      {{ user.email }}
+
+    </p>
+
+  </div>
+</div>
