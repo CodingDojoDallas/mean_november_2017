@@ -8,7 +8,7 @@ var   express       = require('express'),
       routes        = require('./server/config/routes.js'),
       port          = 8000;
 
-console.log(routes);
+routes(app)
 
 app.use(session({
   secret: 'secretpassword',
