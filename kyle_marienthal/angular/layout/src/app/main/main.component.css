@@ -1,0 +1,15 @@
+.main{
+  background-color: #9FC5F7;
+  border: 2px dashed black;
+  width: 70%;
+  height: 278px;
+  display: inline-block;
+  margin-left: 34px;
+
+}
+p{
+  font-size: 15px;
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+}
