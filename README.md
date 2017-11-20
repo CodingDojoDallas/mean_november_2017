@@ -1,8 +1,8 @@
 # Coding Dojo - MEAN November 2017
 
-Welcome Scripters 
+Welcome Scripters
 
-> “ It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free. ” 
+> “ It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free. ”
 - Steve McConnel
 
 ## Setup
@@ -45,6 +45,7 @@ Services/Http Module - https://youtu.be/i1GnJVpkUsI <br>
 Routes - https://youtu.be/OFDva1TLqXM <br>
 Full Mean Part I - https://youtu.be/Uwl8miuLmbY <br>
 Full Mean Part II - https://youtu.be/n5xQ-A1Ix3o <br>
+Full Mean Deploy - https://youtu.be/XNJ8dQqAfZo <br>
 Full Mean Login - https://youtu.be/6mhjrxXtDnE <br>
 
 ## Demos:
