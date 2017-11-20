@@ -1,0 +1,15 @@
+<form (submit)="createTask($event)" #formData='ngForm'>
+  <input 
+      type="text"
+      name="name"
+      required
+      minlength="4"
+      [(ngModel)] = "task.name"
+      #name ='ngModel'
+  />
+  {{ name.errors | json }}
+  {{ formData.errors | json }}
+  <button *ngIf=" ! formData.valid" type="submit" disabled>Create Task</button>
+  <button type="submit" *ngIf="formData.valid" >Create Task</button>
+
+</form>

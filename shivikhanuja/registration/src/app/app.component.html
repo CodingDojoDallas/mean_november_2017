@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   
-  <form (submit)= "onSubmit()">  <!--submit is buildin with form the second one is what we name it-->
+  <form (submit)="onSubmit()">  <!--submit is buildin with form the second one is what we name it-->
     First Name: <input 
     type="text"
     name="FirstName"
@@ -39,7 +39,6 @@
     required
     minlength="16"
     #password='ngModel'
-    pattern="^([a-zA-Z0-9@*#]{8,15})$"
     [(ngModel)]="user.password"
     />
     {{ password.errors | json }}
@@ -50,7 +49,6 @@
     required
     minlength="16"
     #password='ngModel'
-    pattern="^([a-zA-Z0-9@*#]{8,15})$"
     [(ngModel)]="user.password"
     />
     {{ password.errors | json }}
@@ -82,15 +80,18 @@
     />
     {{ city.errors | json }}
     <p></p>
-  </form>
-
-</div>
-
-<div>
-  <form>
+    State: <select name="state" >
+      <option *ngFor="let state of states" value="state">{{state}}</option>
+    </select>
+    <p></p>
+    I'm feeling lucky:<input type="radio" name="lucky" [(ngModel)]="user.lucky" value="true"> Yes
+    <input type="radio" name="lucky" [(ngModel)]="user.lucky" value="false"> No
+    <p></p>
     <input type="submit" value="Register">
   </form>
+
 </div>
+
 <div *ngFor= "let user of users">
   {{ user.FirstName }}
   {{ user.LastName }}

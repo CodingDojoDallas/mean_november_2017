@@ -16,11 +16,14 @@ export class AppComponent {
     address:'',
     unit:'',
     city:'',
+    state:'',
+    lucky: ''
   }
+  states = ['Alaska','Texas','New york', 'California'];
 
 
   onSubmit() {
-    
+      console.log('here');
       this.users.push(this.user);
       this.user = {
         FirstName: '',
@@ -29,7 +32,9 @@ export class AppComponent {
         password:'',
         address:'',
         unit:'',
-        city:''
+        city:'',
+        state:'',
+        lucky: ''
       }
    
     // API (this.user)
