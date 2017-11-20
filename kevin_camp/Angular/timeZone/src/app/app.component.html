@@ -1,0 +1,11 @@
+<div class="container">
+	<h1>US Time Zone Display</h1>
+	<div class="main">
+		<li><button (click)="getTimeZone('PST')" [ngClass]="{selected: TZ === 'PST'}">PST</button></li>
+		<li><button (click)="getTimeZone('MST')" [ngClass]="{selected: TZ === 'MST'}">MST</button></li>
+		<li><button (click)="getTimeZone('CST')" [ngClass]="{selected: TZ === 'CST'}">CST</button></li>
+		<li><button (click)="getTimeZone('EST')" [ngClass]="{selected: TZ === 'EST'}">EST</button></li>
+		<li><button (click)="getTimeZone('CST')" [ngClass]="{selected: TZ === 'PST'}">Reset</button></li>
+		<h1> Current Time {{ time | date: 'medium' }}</h1>
+	</div>
+</div>

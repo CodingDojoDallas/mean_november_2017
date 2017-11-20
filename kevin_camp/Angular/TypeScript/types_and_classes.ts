@@ -4,7 +4,7 @@ var myArr: number[] = [1,2,3,4];
 var myObj: object = { name:'Bill'};
 var anythingVariable: any = "Hey";
 var anythingVariable: any = 25;
-var arrayOne: boolean = [true, false, true, true];
+var arrayOne:  [true, false, true, true];
 var arrayTwo:  any = [1, 'abc', true, 2];
 myObj = { x: 5, y: 10 };
 // object constructor
