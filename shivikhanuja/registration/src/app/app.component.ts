@@ -6,10 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   users = [];
   user = {
     FirstName: '',
-    LastName: ''
+    LastName: '',
+    email:'',
+    password:'',
+    address:'',
+    unit:'',
+    city:'',
   }
 
 
@@ -18,7 +24,12 @@ export class AppComponent {
       this.users.push(this.user);
       this.user = {
         FirstName: '',
-        LastName: ''
+        LastName: '',
+        email:'',
+        password:'',
+        address:'',
+        unit:'',
+        city:''
       }
    
     // API (this.user)
