@@ -3,12 +3,13 @@ import { Task } from '../task'
 @Component({
   selector: 'app-task-new',
   templateUrl: './task-new.component.html',
-  styleUrls: ['./task-new.component.css']
+  styleUrls: ['./task-new.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TaskNewComponent implements OnInit {
   task: Task
 
-  @Output() taskEventEmitter = new EventEmitter();
+  @Output() createTaskEmitter = new EventEmitter();
 
   constructor() {
  
@@ -19,11 +20,11 @@ export class TaskNewComponent implements OnInit {
 
   }
   onSubmit(event) {
-    event.preventDefault();
+      event.preventDefault();
 
-    taskEventEmitter.emit(this.task);
+      this.createTaskEmitter.emit(this.task);
 
-    this.task= new Task();
+      this.task = new Task();
   }
 
 }

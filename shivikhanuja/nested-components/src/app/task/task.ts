@@ -3,7 +3,7 @@
 // }
 
 
-export class Task implements TaskInterface {
+export class Task {
     name:string
     constructor(name="") {
         this.name = name;
