@@ -13,6 +13,7 @@ export class TaskComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.tasks = [];
   }
 
 }

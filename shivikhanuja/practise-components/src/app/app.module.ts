@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { TaskNewComponent } from './task/task-new/task-new.component';
-import { TaskService } from './task/task.service'; 
+import { TaskService } from './task/task.service';
+import { TaskShowComponent } from './task/task-show/task-show.component'; 
 
 
 
@@ -17,7 +18,8 @@ import { TaskService } from './task/task.service';
     AppComponent,
     TaskComponent,
     TaskListComponent,
-    TaskNewComponent
+    TaskNewComponent,
+    TaskShowComponent
   ],
   imports: [
     BrowserModule,
