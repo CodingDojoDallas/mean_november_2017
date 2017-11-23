@@ -1,0 +1,20 @@
+<div class="note-new-div">
+  <form (submit)= "onSubmit(); createNote.resetForm()" #createNote='ngForm'>
+      <label>Note:</label>
+      <input 
+        type="text"
+        name="content"
+        required
+        minlength="3"
+        [(ngModel)]= "note.content"
+        #content = 'ngModel'
+      />
+      <small [hidden]="content.valid || (content.untouched && !createNote.submitted)">
+          Content is Required(minimum character length of 3).
+      </small>
+
+      <button type="submit" [disabled]="!createNote.valid">Create Note</button>
+  </form>
+
+
+</div>
