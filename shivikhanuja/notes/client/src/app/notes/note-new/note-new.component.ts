@@ -17,7 +17,9 @@ export class NoteNewComponent implements OnInit {
   }
   onSubmit() {
       this.setDates(this.note);
-      this._noteService.createNote(this.note);
+      this._noteService.createNote(this.note, (note)=> {
+        
+      });
 
       this.note = new Note();
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService} from '../task.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { Task } from '../task';
 @Component({
   selector: 'app-task-show',
   templateUrl: './task-show.component.html',

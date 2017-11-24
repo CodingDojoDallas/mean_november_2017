@@ -9,11 +9,17 @@
         [(ngModel)]= "note.content"
         #content = 'ngModel'
       />
-      <small [hidden]="content.valid || (content.untouched && !createNote.submitted)">
-          Content is Required(minimum character length of 3).
+      <small 
+          class="errors"
+          [hidden]="content.valid || (content.untouched && !createNote.submitted)"
+          >Content is Required(minimum character length of 3).
       </small>
 
-      <button type="submit" [disabled]="!createNote.valid">Create Note</button>
+      <button 
+        type="submit" 
+        [disabled]="!createNote.valid"
+        >Create Note
+      </button>
   </form>
 
 

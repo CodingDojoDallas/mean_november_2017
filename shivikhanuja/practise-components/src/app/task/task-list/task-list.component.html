@@ -1,5 +1,10 @@
 <a [routerLink]="['/tasks', 'new']">Create Task</a>
 
 <div *ngFor= "let task of tasks">
-    <a [routerLink] = "['/tasks', ':id']">{{ task.name }}</a>
+    <a [routerLink] = "['/tasks', task.id]">{{ task.name }}</a>  
 </div>
+
+
+<!-- for pulling the id from mongoose will do task._id -->
+
+

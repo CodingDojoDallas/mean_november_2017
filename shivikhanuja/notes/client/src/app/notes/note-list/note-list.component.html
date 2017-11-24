@@ -1,4 +1,4 @@
-<div *ngFor = "let note of notes">
+<div *ngFor = "let note of notes | orderBy: 'note._id' : reverse">
   <div class="note">
     <div class="note-created-at">
         <p>Noted On:{{ note.createdAt | date:'medium'}}</p>
