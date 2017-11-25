@@ -1,4 +1,5 @@
-var notes = require('../controllers/notes');
+var notes = require('../controllers/notes'),
+    path  = require('path');
 
 
 module.exports = (app) => {

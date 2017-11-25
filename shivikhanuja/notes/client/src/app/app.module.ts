@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
 
-import { Ng2OrderModule } from 'ng2-order-pipe';
+
 
 import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
@@ -24,7 +25,7 @@ import { NoteService } from './notes/note.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Ng2OrderModule,
+    AppRoutingModule,
   ],
   providers: [NoteService],
   bootstrap: [AppComponent]
