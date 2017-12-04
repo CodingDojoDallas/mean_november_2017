@@ -1,0 +1,13 @@
+.note {
+    border: 2px solid black;
+    margin: 5px 10px 0px 0px;
+    padding: 0px 10px 0px 0px; 
+}
+
+.note-content .note-created-at {
+    display: inline-block;
+}
+
+.note-created-at {
+    float: right;
+}

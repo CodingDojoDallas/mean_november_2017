@@ -1,0 +1,9 @@
+<a [routerLink] = "['/tasks']">All Tasks</a>
+<form (submit)="onSubmit()">
+  <input 
+  type="text"
+  name ="name"
+  [(ngModel)] ="task.name"
+  />
+  <button type="submit">Create Task</button>
+</form>

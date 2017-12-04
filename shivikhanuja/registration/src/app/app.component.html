@@ -1,0 +1,100 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  
+  <form (submit)="onSubmit()">  <!--submit is buildin with form the second one is what we name it-->
+    First Name: <input 
+    type="text"
+    name="FirstName"
+    required
+    minlength="3"
+    #FirstName='ngModel'  
+    [(ngModel)]="user.FirstName"
+    />
+    {{ FirstName.errors | json }}
+    <p></p>
+    Last Name: <input 
+    type="text" 
+    name="LastName"
+    required
+    minlength="3"
+    #LastName='ngModel'
+    [(ngModel)]="user.LastName"
+    />
+    {{ LastName.errors | json }}
+    <p></p>
+    Email: <input 
+    type="text" 
+    name="email"
+    required
+    minlength="3"
+    #email='ngModel'
+    [(ngModel)]="user.email"
+    />
+    {{ email.errors | json }}
+    {{ email.valid | json }}
+    <p></p>
+    Password: <input 
+    type="text" 
+    name="password"
+    required
+    minlength="16"
+    #password='ngModel'
+    [(ngModel)]="user.password"
+    />
+    {{ password.errors | json }}
+    <p></p>
+    Password Confirmation: <input 
+    type="text" 
+    name="password"
+    required
+    minlength="16"
+    #password='ngModel'
+    [(ngModel)]="user.password"
+    />
+    {{ password.errors | json }}
+    <p></p>
+    Street Address: <input 
+    type="text" 
+    name="address"
+    required
+    #address='ngModel'
+    [(ngModel)]="user.address"
+    />
+    {{ address.errors | json }}
+    <p></p>
+    Unit: <input 
+    type="text" 
+    name="unit"
+    required
+    #unit='ngModel'
+    [(ngModel)]="user.unit"
+    />
+    {{ unit.errors | json }}
+    <p></p>
+    City: <input 
+    type="text" 
+    name="city"
+    required
+    #city='ngModel'
+    [(ngModel)]="user.city"
+    />
+    {{ city.errors | json }}
+    <p></p>
+    State: <select name="state" >
+      <option *ngFor="let state of states" value="state">{{state}}</option>
+    </select>
+    <p></p>
+    I'm feeling lucky:<input type="radio" name="lucky" [(ngModel)]="user.lucky" value="true"> Yes
+    <input type="radio" name="lucky" [(ngModel)]="user.lucky" value="false"> No
+    <p></p>
+    <input type="submit" value="Register">
+  </form>
+
+</div>
+
+<div *ngFor= "let user of users">
+  {{ user.FirstName }}
+  {{ user.LastName }}
+</div>
+
+

@@ -16,3 +16,6 @@ export class AppComponent {
     this.num = this.num + 1;
   }
 }
+
+
+
