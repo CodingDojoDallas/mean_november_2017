@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <div class="button" *ngFor="let x of switches, let idx= index"
+    (click)="toggle(idx)"
+    [ngClass]="{ 'green': x, 'red': !x}"
+  >
+  <p *ngIf="x">ON</p>
+  <p *ngIf="!x">OFF</p>
+
+  </div>
+</div>

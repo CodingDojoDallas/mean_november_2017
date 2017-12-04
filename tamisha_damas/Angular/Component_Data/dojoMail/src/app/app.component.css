@@ -1,0 +1,9 @@
+td {
+  border: 1px solid black;
+  width: 225px;
+  padding-left: 5px;
+}
+th {
+  margin: 10px;
+  padding-left: 5px;
+}

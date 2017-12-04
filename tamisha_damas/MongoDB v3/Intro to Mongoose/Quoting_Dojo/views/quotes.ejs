@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quoting Dojo</title>
+  </head>
+  <body>
+    <h4>Here are the awesome quotes!</h4>
+    <br>
+    <br>
+    <% for(var x in users) { %>
+      <hr>
+      <p>Quote: <%= users[x].quote %></p>
+      <p>Author: <%= users[x].name %></p>
+
+    <% } %>
+    <a href="/">Home</a>
+  </body>
+</html>
