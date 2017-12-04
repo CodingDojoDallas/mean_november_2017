@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>
+    GitHub Score
+  </h1>
+  <form (submit) = 'onSubmit($event)' #form='ngForm'>
+    <label>Github Username:</label>
+    <input type="text" name= 'username'>
+    <input type="submit" value="Calculate my Github Score" [disabled]='! form.valid'>
+
+  </form>
+  <h1>Your Score: </h1>
+
+</div>

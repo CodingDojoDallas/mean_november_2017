@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1> Switchboard </h1>
+
+
+<div class="background" *ngFor="let switch of switches; let idx = index" class="switch">
+     <button
+          *ngIf="switch"
+          [ngClass]="{'on': switch}"
+          (click)="flipSwitch(idx)"
+          >
+          ON
+     </button>
+     <button
+          *ngIf="!switch"
+          [ngClass]="{'on': switch}"
+          (click)="flipSwitch(idx)">
+          OFF
+     </button>
+  </div>
